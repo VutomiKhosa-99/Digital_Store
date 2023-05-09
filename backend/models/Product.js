@@ -15,10 +15,10 @@ const productSchema = new mongoose.Schema({
         max: 50,
       },
       size: {
-        type: String,
+        type: Number,
         required: true,
         min: 2,
-        max: 50,
+       
       },
       color: {
         type: String,
@@ -29,7 +29,7 @@ const productSchema = new mongoose.Schema({
       price: {
         type: Number,
         required: true,
-        max: 7,
+    
       },
       category: {
         type: String,

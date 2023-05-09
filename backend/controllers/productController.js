@@ -1,3 +1,4 @@
+const { id } = require('date-fns/locale')
 const Product = require('../models/Product')
 
 
@@ -16,6 +17,56 @@ const getAllProducts = async (req, res) => {
     res.json(productObj)
 }
 
+
+// @desc Get all products
+// @route GET /products
+// @access Private
+const DeleteProduct = async (req, res) => {
+  
+  // Get all users from MongoDB
+  try {
+    const{id}  = req.body
+    const productObj = await Product.deleteOne(id).exec
+    console.log(productObj)
+    if (productObj.deletedCount === 1) {
+        console.log("Successfully deleted one document.");
+        res.status(200).json(productObj);
+      } else {
+        console.log("No documents matched the query. Deleted 0 documents.");
+      }
+   
+} catch (err){
+     res.status(404).json({ message: err.message})
+    // res.status(404).json({ message: "No product found"})
+
+}
+
+
+res.json(this.productObj)
+
+}
+
+
+// @desc Get PRODUCT BY id
+// @route GET /productId
+// @access Private
+const getProductById = async (req, res) => {
+    // Get all users from MongoDB
+    try {
+        const id = req.params.id
+        const productObj = await Product.findById(id)
+        res.status(200).json(productObj)
+    } catch (err){
+        // res.status(404).json({ message: err.message})
+        res.status(404).json({ message: "No product found"})
+
+    }
+
+
+    res.json(this.productObj)
+}
+
+
 // @desc Create new product
 // @route POST /products
 // @access Private
@@ -26,7 +77,6 @@ const createNewProduct = async (req, res) => {
     if (!title || !description || !size || !color || !price || !category || !brand || !image || !availableStock ) {
         return res.status(400).json({ message: 'All fields are required' })
     }
-
 
     const productObject = { title, description, size, color, price, category, brand, image, availableStock }
 
@@ -43,5 +93,7 @@ const createNewProduct = async (req, res) => {
 
 module.exports = {
     getAllProducts,
-    createNewProduct
+    createNewProduct,
+    getProductById,
+    DeleteProduct
 }
