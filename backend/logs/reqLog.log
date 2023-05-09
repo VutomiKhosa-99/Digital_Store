@@ -47,6 +47,7 @@
 20230509	10:36:37	a5cc6321-599f-4a77-bdd9-64a7b459e534	GET	/products	undefined
 20230509	10:36:38	959c38e5-7694-4050-bdb1-83acadd57954	GET	/css/style.css	undefined
 20230509	10:41:42	fb26941d-1a42-4a06-aeba-134ad8bf0e87	GET	/products	undefined
+<<<<<<< HEAD
 20230509	11:52:22	05f79857-130a-47ca-85ee-52e5994014ca	POST	/products	undefined
 20230509	11:52:38	9f437058-7b89-4fd9-8cfc-003e8313d0c0	POST	/products	undefined
 20230509	11:58:35	dc779aa4-f6a0-4adc-9ef2-1d794fda696b	POST	/products	undefined
@@ -114,3 +115,21 @@
 20230509	15:32:32	aae0976a-9bd4-427c-9967-070bcff77b60	GET	/products/645a194bb7549a7ee4f9b81f	undefined
 20230509	15:32:53	2090e7a9-173b-4de2-aabd-14cfcb7d39a4	GET	/products/645a194bb7549a7ee4f9b81f	undefined
 20230509	15:37:32	c813d095-aad3-4d30-9106-893c4255b4ce	DELETE	/products/645a194bb7549a7ee4f9b81f	undefined
+=======
+20230509	12:49:43	c462c113-be2e-45e2-b6cd-4b418f102be6	POST	/users/1	undefined
+20230509	12:51:00	5990222c-1ee2-44a5-9272-51c48bf84a1f	POST	/users/645a194bb7549a7ee4f9b81f	undefined
+20230509	12:51:01	64da2d10-714c-4909-9a1f-54157d9d6365	POST	/users/645a194bb7549a7ee4f9b81f	undefined
+20230509	13:20:20	eefe5dac-5c45-434a-82d9-01daa4732389	DELETE	/users/645a194bb7549a7ee4f9b81f	undefined
+20230509	13:21:01	d992d76a-60f9-4d17-83ef-c2687e5110cc	DELETE	/users/645a194bb7549a7ee4f9b81f	undefined
+20230509	13:21:23	921f486f-9fc7-40ab-a444-e1295d2b98e8	DELETE	/users/645a194bb7549a7ee4f9b81f	undefined
+20230509	13:21:40	58ddb16d-9fcf-4e43-b524-b9a188c08cca	DELETE	/users	undefined
+20230509	13:21:49	6fa07d7e-347f-4884-bef0-a1bf74340788	DELETE	/users	undefined
+20230509	13:21:57	cc90a022-254e-4b06-9dd2-7ae4f2e144a1	DELETE	/users	undefined
+20230509	13:22:03	327fa2a9-a600-4aa2-ab5e-f8bdaccc40c4	DELETE	/users	undefined
+20230509	13:22:07	5920a601-032c-41c4-b08d-1c1b0e79edc5	DELETE	/users	undefined
+20230509	13:23:45	962dd7d0-ce69-4463-9598-51ee02738764	DELETE	/users	undefined
+20230509	13:25:51	74522b8a-cf44-416e-bd37-48b8d55d6ccc	POST	/users	undefined
+20230509	13:26:41	63a71112-6f48-4e26-b999-c44d0ed72e91	POST	/users	undefined
+20230509	13:27:31	c6481861-0ba9-49fd-a88d-176b543ad80b	POST	/users	undefined
+20230509	13:32:12	57a82d78-5964-4919-b006-d23639249ed6	POST	/users	undefined
+>>>>>>> 560db15ecce2752269093db980ebd4f3752408f2
