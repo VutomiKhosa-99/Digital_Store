@@ -1,9 +1,11 @@
 
 <nav class="navbar navbar-light" style="background-color: white">
-    <a class="navbar-brand"> <img src="../../assets/Logo" alt=""> </a>
+    <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="router-link-active" > <img src="../../assets/logo.png" alt=""> </a>
     <form class="form-inline">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <a [routerLink]="['/login']" routerLinkActive="router-link-active">
       <button type="button" class="btn btn-outline-dark">Login</button><br>
+    </a>
       
       <i class="bi bi-cart-fill">
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
