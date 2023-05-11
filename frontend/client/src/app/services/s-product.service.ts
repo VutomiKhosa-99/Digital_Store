@@ -15,10 +15,10 @@ export class SProductService {
   
    
   
-     getAllProducts(){
-      return this.http.get(SOAP_API_URL);
+    //  getAllProducts(){
+    //   return this.http.get(SOAP_API_URL);
   
-     }
+    //  }
   
     
   
