@@ -20,3 +20,12 @@
     border-bottom-right-radius: .3rem;
     }
     }
+
+    .centerLogo{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    a{
+        color:blue;
+    }
