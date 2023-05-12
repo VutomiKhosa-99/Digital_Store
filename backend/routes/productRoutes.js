@@ -7,4 +7,13 @@ router.route('/')
     .get(productController.getAllProducts)
     .post(productController.createNewProduct)
 
+router.route('/:id')
+    .get(productController.getProductById)
+
+    
+router.route('/:id')
+    .delete(productController.DeleteProduct)
+
+    
+
 module.exports = router
