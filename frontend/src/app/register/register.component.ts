@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-register',
@@ -9,8 +12,15 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class RegisterComponent implements OnInit {
 
   myForm: FormGroup;
-
-  constructor(private fb: FormBuilder) { }
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
+  
+  constructor(
+    private private fb: FormBuilder), 
+    private authService: AuthService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
     this.myForm = this.fb.group({
@@ -22,8 +32,19 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
- 
     console.log(this.myForm.value);
+    const user = this.myForm.value;
+    this.authService.registerUser(user).subscribe({
+      next: data => {
+        console.log(data);
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+      },
+      error: err => {
+        this.errorMessage = err.error.message;
+        this.isSignUpFailed = true;
+      }
+    });
+  }
   }
 
-}

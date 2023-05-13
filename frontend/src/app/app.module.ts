@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule , FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './services/auth.service';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,9 +32,11 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
+
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
