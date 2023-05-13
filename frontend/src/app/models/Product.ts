@@ -1,0 +1,11 @@
+export interface Product {
+    title: string,
+    description: string,
+    size: number,
+    color:string ,
+    price: number,
+    category:  string,
+    image: string,
+     availableStock: number
+      
+}
