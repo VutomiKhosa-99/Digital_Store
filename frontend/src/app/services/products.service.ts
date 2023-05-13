@@ -3,13 +3,14 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '../models/Product';
 
-const URL = 'http://localhost:2000'
 
+const URL = 'http://localhost:2000'
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
 
+  
   constructor(private httpClient: HttpClient) { }
 
   getAllProducts() : Observable<Array<Product>> {
@@ -19,4 +20,11 @@ export class ProductsService {
     )
 
   }
+
+  
+  //getting product by id
+  get(id: any): Observable<any> {
+    return this.httpClient.get('${this.URL}/Product/${id}');
+  }
+  
 }
