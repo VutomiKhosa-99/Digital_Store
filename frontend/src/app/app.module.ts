@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule , FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AuthService } from './services/auth.service';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,7 +32,9 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule
+
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

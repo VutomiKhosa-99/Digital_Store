@@ -15,16 +15,16 @@ export class RegisterComponent implements OnInit {
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
-
+  
   constructor(
-    private formBuilder: FormBuilder, 
+    private fb: FormBuilder, 
     private authService: AuthService,
     private router: Router
     ) { }
 
   ngOnInit() {
-    this.myForm = this.formBuilder.group({
-      name: ['', [Validators.required]],
+    this.myForm = this.fb.group({
+      name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
       repeatPassword: ['', [Validators.required]]
@@ -32,6 +32,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.myForm.value);
     const user = this.myForm.value;
     this.authService.registerUser(user).subscribe({
       next: data => {
