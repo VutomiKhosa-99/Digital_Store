@@ -9,7 +9,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class LoginComponent implements OnInit {
 
   myReactiveForm: FormGroup; 
-  
+
   constructor(private fb: FormBuilder) {}
 
   submit(){
@@ -24,11 +24,7 @@ export class LoginComponent implements OnInit {
       passwordInput: new FormControl(null,  Validators.required)
     },{updateOn:'change'});
 
-     //this.myReactiveForm = this.fb.group({
-    //   name: ['', Validators.required],
-    //   email: ['', [Validators.required, Validators.email]],
-    //   password: ['', [Validators.required, Validators.minLength(15)]],
-    // });
+   
 
   }
 
