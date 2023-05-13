@@ -6,7 +6,7 @@
         <img src="{{ product.image }}" class="card-img-top" alt="...">
         <div class="card-body">
           <h1 class="card-title " style="font-size: large;">{{product.title}}</h1>
-          <h5 class="card-title font-bold" style="font-size: large;">R{{product.price}}</h5>
+          <h5 class="card-title font-bold" style="font-size: large;">{{product.price | currency : 'ZAR' : 'R'}}</h5>
           <!-- <p class="card-text">{{product.description}}</p> -->
           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <a routerLink="/products-details"><button class="btn btn-warning me-md-2" type="button" >More Details</button></a>
@@ -15,9 +15,8 @@
         </div>
       </div>
     </div>
-    
-    
-    
+
+
+
       </div>
-    
-  
+
