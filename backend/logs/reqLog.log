@@ -138,3 +138,5 @@
 20230512	05:25:13	7492e669-8078-467c-a64a-ba8fa4dc2ae3	POST	/users	undefined
 20230512	05:27:25	5f2e95e7-c81c-4f48-8f8d-bf55d2540a0d	POST	/users	undefined
 20230512	05:27:42	628bdbb5-cd36-4e32-8737-6fdaf84aa1df	GET	/users	undefined
+20230513	19:07:32	ce88239d-de18-48a2-8abc-1cf5480e58a5	GET	/products	http://localhost:4200
+20230513	19:07:58	10eb9c01-3853-4de1-99b5-a9a0686878af	GET	/products	http://localhost:4200
