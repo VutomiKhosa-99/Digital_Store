@@ -1,0 +1,11 @@
+
+
+.alert{
+    color:red;
+    margin-bottom:4px;
+    text-align:left;
+}
+
+.ng-invalid.ng-touched{
+    border:red;
+}

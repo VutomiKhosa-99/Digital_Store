@@ -3,9 +3,40 @@
     <div class="container mx-auto p-4 bg-white">
         <div class="w-full md:w-1/2 lg:w-1/3 mx-auto my-12">
           <h1 class="text-lg font-bold">Login</h1>
-          <form class="flex flex-col mt-4" (ngSubmit)="submit()">
+
+          <form class="flex flex-col mt-4" [formGroup]="myReactiveForm" (ngSubmit)="submit()">
            
-    
+    <div class="form-group">
+        <label for="emailInput_id">Username</label><br>
+
+        <input type="text" 
+        name="emailInput_id" 
+        formControlName="emailInput" 
+        class="form-control" 
+        placeholder="Email address"
+        minlength="2" 
+        maxlength="50"
+        class="px-4 py-3 mt-4 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
+        (input)="myReactiveForm.get('emailInput').updateValueAndValidity()"
+        >
+        <!-- <div *ngIf="emailInput.touched && emailInput.invalid" class="alert">Invalid email</div> -->
+
+    </div>
+
+    <div class="form-group">
+        <label for="passwordInput_id">Password</label><br>
+
+        <input type="password" 
+        name="passwordInput_id" 
+        formControlName="passwordInput" 
+        class="form-control"
+        placeholder="Password"
+        minlength="5" maxlength="16"
+        class="px-4 py-3 mt-4 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
+        (input)="myReactiveForm.get('PasswordInput').updateValueAndValidity()"
+        >
+
+    </div>
     
             <!-- <div *ngIf="myForm.get('email').invalid && (myForm.get('email').dirty || myForm.get('email').touched)">
                 Please provide a valid email address.

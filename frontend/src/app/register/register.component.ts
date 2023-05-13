@@ -10,7 +10,7 @@ export class RegisterComponent implements OnInit {
 
   myForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
     this.myForm = this.fb.group({
@@ -21,11 +21,9 @@ export class RegisterComponent implements OnInit {
     }, { updateOn: 'change' }); // Set the updateOn option to 'change'
   }
 
-  onSubmit(form: FormGroup) {
-    console.log('Valid?', form.valid); // true or false
-    console.log('Name', form.value.name);
-    console.log('Email', form.value.email);
-    console.log('Password', form.value.password);
+  onSubmit() {
+ 
+    console.log(this.myForm.value);
   }
 
 }
