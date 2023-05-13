@@ -11,34 +11,55 @@
 
           <form class="flex flex-col mt-4" [formGroup]="myReactiveForm" (ngSubmit)="submit()">
            
-    <div class="form-group">
-        <label  for="emailInput_id">Username</label>
-        <input type="text" 
+  
+        <!-- <input type="text" 
         name="emailInput_id" 
         formControlName="emailInput" 
-        class="form-control" 
         placeholder="Email address"
-        class="px-4 py-3 mt-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
+        class="form-control"
+        class="px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
         (input)="myReactiveForm.get('emailInput').updateValueAndValidity()"
         >
       <div  *ngIf="myReactiveForm.get('emailInput').invalid && myReactiveForm.get('emailInput').touched" class="alert">Email address required</div> 
-    </div>
+  
 <br>
-    <div class="form-group">
-        <label for="passwordInput_id">Password</label>
-
+    
+      
         <input type="password" 
         name="passwordInput_id" 
         formControlName="passwordInput" 
-        class="form-control"
         placeholder="Password"
-        class="px-4 py-3 mt-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
+        class="form-control"
+        class="px-4 py-3 mt-4 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
         (input)="myReactiveForm.get('PasswordInput').updateValueAndValidity()"
         >
-        <div  *ngIf="myReactiveForm.get('passwordInput').invalid && myReactiveForm.get('passwordInput').touched" class="alert">Password required</div> 
+        <div  *ngIf="myReactiveForm.get('passwordInput').invalid && myReactiveForm.get('passwordInput').touched" class="alert">Password required</div>  -->
 
+        <input
+        type="email"
+        name="emailInput_id" 
+        class="form-control"
+        class="px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
+        placeholder="Full Name"
+        formControlName="emailInput" 
+        (input)="myReactiveForm.get('emailInput').updateValueAndValidity()"
+    />
+
+    <div class="text-danger" *ngIf="myReactiveForm.get('emailInput').invalid && (myReactiveForm.get('emailInput').dirty || myReactiveForm.get('emailInput').touched)" class="alert">
+        Please provide a email.
     </div>
-    
+    <input
+        type="password"
+        formControlName="passwordInput" 
+        class="px-4 py-3 mt-4 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
+        placeholder="Email address"
+        formControlName="passwordInput"
+        (input)="myReactiveForm.get('passwordInput').updateValueAndValidity()"
+    />
+
+    <div *ngIf="myReactiveForm.get('passwordInput').invalid && (myReactiveForm.get('passwordInput').dirty || myReactiveForm.get('passwordInput').touched)" class="alert">
+        Please provide a password.
+      </div>
           
             <button
                 type="submit"
@@ -48,7 +69,7 @@
             </button>
             <div class="flex flex-col items-center mt-5">
               <p class="mt-1 text-xs font-light text-gray-500">
-                Dont have an account?<a class="ml-1 font-medium text-blue-400">Register now</a>
+                Dont have an account?<a routerLink="/register" class="ml-1 font-medium text-blue-400">Register now</a>
                 </p>
             </div>
           </form>
