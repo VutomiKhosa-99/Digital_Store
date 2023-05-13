@@ -12,56 +12,34 @@
           <form class="flex flex-col mt-4" [formGroup]="myReactiveForm" (ngSubmit)="submit()">
            
     <div class="form-group">
-        <label for="emailInput_id">Username</label><br>
-
+        <label  for="emailInput_id">Username</label>
         <input type="text" 
         name="emailInput_id" 
         formControlName="emailInput" 
         class="form-control" 
         placeholder="Email address"
-        minlength="2" 
-        maxlength="50"
-        class="px-4 py-3 mt-4 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
+        class="px-4 py-3 mt-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
         (input)="myReactiveForm.get('emailInput').updateValueAndValidity()"
         >
-        <!-- <div *ngIf="emailInput.touched && emailInput.invalid" class="alert">Invalid email</div> -->
-
+      <div  *ngIf="myReactiveForm.get('emailInput').invalid && myReactiveForm.get('emailInput').touched" class="alert">Email address required</div> 
     </div>
-
+<br>
     <div class="form-group">
-        <label for="passwordInput_id">Password</label><br>
+        <label for="passwordInput_id">Password</label>
 
         <input type="password" 
         name="passwordInput_id" 
         formControlName="passwordInput" 
         class="form-control"
         placeholder="Password"
-        minlength="5" maxlength="16"
-        class="px-4 py-3 mt-4 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
+        class="px-4 py-3 mt-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
         (input)="myReactiveForm.get('PasswordInput').updateValueAndValidity()"
         >
+        <div  *ngIf="myReactiveForm.get('passwordInput').invalid && myReactiveForm.get('passwordInput').touched" class="alert">Password required</div> 
 
     </div>
     
-            <!-- <div *ngIf="myForm.get('email').invalid && (myForm.get('email').dirty || myForm.get('email').touched)">
-                Please provide a valid email address.
-              </div>
-            <input ngModel
-                type="password"
-                name="password"
-                class="px-4 py-3 mt-4 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
-                placeholder="Password"
-            /> -->
-    
-            <!-- <div *ngIf="myForm.get('password').invalid && (myForm.get('password').dirty || myForm.get('password').touched)">
-                Password must be at least 8 characters long.
-              </div>
-            <input ngModel
-                type="password"
-                name="repeat-password"
-                class="px-4 py-3 mt-4 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
-                placeholder="Repeat Password"
-            /> -->
+          
             <button
                 type="submit"
                 class="mt-4 px-4 py-3  leading-6 text-base rounded-md border border-transparent text-white focus:outline-none bg-blue-500 text-blue-100 hover:text-white focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer inline-flex items-center w-full justify-center items-center font-medium focus:outline-none"

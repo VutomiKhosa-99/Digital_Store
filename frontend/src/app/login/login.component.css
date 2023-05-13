@@ -2,10 +2,12 @@
 
 .alert{
     color:red;
-    margin-bottom:4px;
     text-align:left;
+    padding: 2px;
+    margin: 4px;
 }
 
 input.ng-invalid.ng-touched{
     border:red 1px solid;
 }
+
