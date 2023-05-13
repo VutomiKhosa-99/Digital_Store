@@ -18,7 +18,7 @@
               (input)="myForm.get('name').updateValueAndValidity()"
           />
   
-          <div class="text-danger" *ngIf="myForm.get('name').invalid && (myForm.get('name').dirty || myForm.get('name').touched)" style="color: red">
+          <div class="text-danger" *ngIf="myForm.get('name').invalid && (myForm.get('name').dirty || myForm.get('name').touched)" class="alert">
               Please provide a name.
           </div>
           <input
@@ -30,7 +30,7 @@
               (input)="myForm.get('email').updateValueAndValidity()"
           />
   
-          <div *ngIf="myForm.get('email').invalid && (myForm.get('email').dirty || myForm.get('email').touched)" style="color: red">
+          <div *ngIf="myForm.get('email').invalid && (myForm.get('email').dirty || myForm.get('email').touched)"class="alert">
               Please provide a valid email address.
             </div>
           <input
@@ -42,7 +42,7 @@
               (input)="myForm.get('password').updateValueAndValidity()"
           />
   
-          <div *ngIf="myForm.get('password').invalid && (myForm.get('password').dirty || myForm.get('password').touched)" style="color: red">
+          <div *ngIf="myForm.get('password').invalid && (myForm.get('password').dirty || myForm.get('password').touched)" class="alert">
               Password must be at least 8 characters long.
             </div>
           <input
@@ -54,7 +54,7 @@
               (input)="myForm.get('repeatpassword').updateValueAndValidity()"
           />
   
-          <div *ngIf="myForm.get('repeatpassword').invalid && (myForm.get('repeatpassword').dirty || myForm.get('repeatpassword').touched)" style="color: red">
+          <div *ngIf="myForm.get('repeatpassword').invalid && (myForm.get('repeatpassword').dirty || myForm.get('repeatpassword').touched)" class="alert">
               Please repeat your password.
             </div>
           <button (click)="onSubmit()"
@@ -66,7 +66,7 @@
         </button>
         <div class="flex flex-col items-center mt-5">
           <p class="mt-1 text-xs font-light text-gray-500">
-            Registered already?<a class="ml-1 font-medium text-blue-400">Login now</a>
+            Registered already?<a routerLink="/login" class="ml-1 font-medium text-blue-400">Login now</a>
             </p>
         </div>
       </form>

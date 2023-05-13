@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
   errorMessage = '';
   
   constructor(
-    private private fb: FormBuilder), 
+    private fb: FormBuilder, 
     private authService: AuthService,
     private router: Router
     ) { }
