@@ -18,7 +18,8 @@ const routes: Routes = [
 {path: 'products-details', component:ProductsDetailsComponent},
 {path: 'navBar', component:NavbarComponent},
 {path: 'login', component:LoginComponent},
-{path: 'footer', component:FooterComponent}
+{path: 'footer', component:FooterComponent},
+{ path: '', redirectTo: 'home', pathMatch: 'full' }
 
 
 ];
