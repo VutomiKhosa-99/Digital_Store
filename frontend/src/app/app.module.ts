@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule , FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthService } from './services/auth.service';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,8 @@ import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductsDetailsComponent } from './products-details/products-details.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+
+import { httpInterceptorProviders } from './_helpers/http.interceptor';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,7 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     HttpClientModule
 
   ],
-  providers: [AuthService],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

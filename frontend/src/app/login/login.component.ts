@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-login',
@@ -7,25 +8,44 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  form: any = {
+    username: null,
+    password: null
+  };
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
+  roles: string[] = [];
 
-  myReactiveForm: FormGroup; 
-
-  constructor(private fb: FormBuilder) {}
-
-  submit(){
-    console.log(this.myReactiveForm)
-    
-  }
+  constructor(private authService: AuthService, private storageService: StorageService) { }
 
   ngOnInit(): void {
-    
-    this.myReactiveForm = new FormGroup({
-      emailInput: new FormControl(null, Validators.required),
-      passwordInput: new FormControl(null,  Validators.required)
-    },{updateOn:'change'});
-
-   
-
+    if (this.storageService.isLoggedIn()) {
+      this.isLoggedIn = true;
+      this.roles = this.storageService.getUser().roles;
+    }
   }
 
+  onSubmit(): void {
+    const { username, password } = this.form;
+
+    this.authService.login(username, password).subscribe({
+      next: data => {
+        this.storageService.saveUser(data);
+
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        this.roles = this.storageService.getUser().roles;
+        this.reloadPage();
+      },
+      error: err => {
+        this.errorMessage = err.error.message;
+        this.isLoginFailed = true;
+      }
+    });
+  }
+
+  reloadPage(): void {
+    window.location.reload();
+  }
 }

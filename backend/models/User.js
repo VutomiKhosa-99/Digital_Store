@@ -2,16 +2,6 @@ const mongoose = require('mongoose')
 
 const userSchema = new mongoose.Schema({
 
-    firstName: {
-        type: String,
-        required: false
-       
-      },
-      lastName: {
-        type: String,
-        required: false
-        
-      },
     username: {
         type: String,
         required: true
@@ -24,10 +14,14 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    roles: {
-        type: [String],
-        default: ["Employee"]
-    }
+    roles: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Role"
+      }
+    ]
+      
+       
     
 },
     { timestamps: true }

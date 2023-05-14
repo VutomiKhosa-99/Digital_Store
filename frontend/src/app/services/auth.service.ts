@@ -1,48 +1,43 @@
-// import { Injectable } from '@angular/core';
-// import { HttpClient, HttpHeaders } from '@angular/common/http';
-// import { map } from 'rxjs'
-
-// const URL = 'http://localhost:2000/users'
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class AuthService {
-//   authToken: any;
-//   user: any;
-
-//   constructor(private httpClient:HttpClient ) { }
-
-//   registerUser(user: any) {
-//     let headers = new HttpHeaders();
-//     headers = headers.append('Content-Type', 'application/json');
-//     return this.httpClient.post(URL, user, {headers: headers})
-//     .pipe(map(res => res.json()));
-//   }
-// }
-
-
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+
+const AUTH_API = 'http://localhost:2000/api/auth/';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-  private readonly API_URL = 'http://localhost:2000';
-
   constructor(private http: HttpClient) {}
 
-  registerUser(user: any): Observable<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-    };
-    const url = `${this.API_URL}/users`;
-    return this.http.post(url, user, httpOptions)
-      .pipe(
-        map(response => response)
-      );
+  login(username: string, password: string): Observable<any> {
+    return this.http.post(
+      AUTH_API + 'signin',
+      {
+        username,
+        password,
+      },
+      httpOptions
+    );
+  }
+
+  register(username: string, email: string, password: string): Observable<any> {
+    return this.http.post(
+      AUTH_API + 'signup',
+      {
+        username,
+        email,
+        password,
+      },
+      httpOptions
+    );
+  }
+
+  logout(): Observable<any> {
+    return this.http.post(AUTH_API + 'signout', { }, httpOptions);
   }
 }
