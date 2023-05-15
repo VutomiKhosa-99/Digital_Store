@@ -2,6 +2,11 @@ const mongoose = require('mongoose')
 
 const productSchema = new mongoose.Schema({
     
+
+  id: {
+    type: mongoose.Schema.Types.ObjectId
+  },
+ 
     title: {
         type: String,
         required: true,
@@ -55,6 +60,7 @@ const productSchema = new mongoose.Schema({
     { timestamps: true }
 )
 
-    
+ 
+
 
 module.exports = mongoose.model('Product', productSchema)

@@ -1,3 +1,4 @@
 20230508	15:31:40	81a8c674-935b-4a00-87f8-2d8987d1f723	SyntaxError: Unexpected token } in JSON at position 54	POST	/users	undefined
 20230509	11:52:22	effe1cd5-7140-46e7-937f-2fd3b7c1ca68	SyntaxError: Unexpected token } in JSON at position 240	POST	/products	undefined
 20230512	05:23:10	3d581282-fcf9-4962-9575-7b0750fef652	SyntaxError: Unexpected string in JSON at position 89	POST	/users	undefined
+20230514	17:46:00	7ce1a695-6722-4d05-8b02-8e11f495122d	Error: Not allowed by CORS	GET	/products	http://localhost:53035

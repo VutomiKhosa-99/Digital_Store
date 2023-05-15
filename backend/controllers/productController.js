@@ -13,7 +13,6 @@ const getAllProducts = async (req, res) => {
     if (!productObj?.length) {
         return res.status(400).json({ message: 'No products found' })
     }
-
     res.json(productObj)
 }
 
