@@ -15,14 +15,21 @@
 
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header">
-    <h5 id="offcanvasRightLabel">My cart</h5>
-    <button type="button" class="btn-close text-reset" style="color:black" data-bs-dismiss="offcanvas" aria-label="Close">X</button>
+    <h5 id="offcanvasRightLabel" style="font-weight: bolder;">My cart</h5>
+    <button type="button" class="btn-close text-reset" style="color:black; font-weight: bolder;" data-bs-dismiss="offcanvas" aria-label="Close">X</button>
   </div>
   <div class="offcanvas-body">
      <app-cart *ngFor="let product of cartService.cartProducts"
               [product]="product">
 
             </app-cart>
+            
+            <div class="totalCard card">
+             <span class="card-title" style="font-weight: bolder;">SUBTOTAL: R{{ cartService.getTotalPrice() }}</span>
+          <div class="card-actions">
+            <button class="btn btn-primary btn-block">Checkout</button>
+          </div>
+          </div>
   </div>
 </div>
       
