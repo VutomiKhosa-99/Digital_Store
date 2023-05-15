@@ -24,15 +24,14 @@ export class ProductsService {
 
   
   //getting product by id
-  get(id: any): Observable<any> {
-    return this.httpClient.get('${this.URL}/Product/${id}');
+  getProduct(id: any): Observable<any> {
+    return this.httpClient.get(`${URL}/products/${id}`);
   }
 
-  getProduct(id: string): Observable<Product | undefined> {
-    return this.getAllProducts()
-      .pipe(
-        map((products: Product[]) => products.find(p => p._id === id))
-      );
-  }
-  
+//   getProduct(id: string): Observable<Product | undefined> {
+//     return this.getAllProducts()
+//       .pipe(
+//         map((products: Product[]) => products.find(p => p._id === id))
+//       );
+//   }
 }

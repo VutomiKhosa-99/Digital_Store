@@ -7,7 +7,7 @@
       
       <p class="card-text wrappDetails">{{product.description}}</p>
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a routerLink="/products-details" class="badge rounded-pill bg-secondary" type="button">View more</a>
+        <a class="badge rounded-pill bg-secondary" type="button" [routerLink]="['products/', product._id]">View more</a>
         <span  (click)="addToCart()" class="badge rounded-pill bg-success" type="button">Add to cart</span>
       </div>
     </div>

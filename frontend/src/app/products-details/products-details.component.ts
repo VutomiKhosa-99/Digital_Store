@@ -1,38 +1,3 @@
-// import { Component, OnInit } from '@angular/core';
-// import { ProductsService } from '../services/products.service';
-// import {Product } from '../models/Product';
-// import { Observable } from 'rxjs';
-// import { ActivatedRoute } from '@angular/router';
-// import { Location } from '@angular/common';
-
-
-// export class ProductsDetailsComponent implements OnInit {
-//   product: Product | undefined
-
-//     constructor(
-//     private route: ActivatedRoute,
-//     private productsService: ProductsService,
-//     private location: Location
-//     ){}
-
-//   ngOnInit(): void {
-//         this.get_Product();
-//       }
-
-//       get_Product(): void {
-//             const id = (this.route.snapshot.paramMap.get('id'));
-//             console.log("this is an id :",id)
-//             this.productsService.get(id)
-//               .subscribe((product:any) =>{
-//                 console.log(product)
-//                 this.product = product;
-//               } );
-  
-//             }
-// }
-
-
-
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -55,7 +20,7 @@ export class ProductsDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id')).toString();
+    const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.getProduct(id);
     }
@@ -69,7 +34,7 @@ export class ProductsDetailsComponent implements OnInit {
   }
 
   onBack(): void {
-    this.router.navigate(['/products']);
+    this.router.navigate(['/']);
   }
 }
 
