@@ -7,6 +7,9 @@ body{
  justify-content: center;
  align-items: center;
 }
+
+
+
 .Cart-Container{
  width: 70%;
  height: 85%;
@@ -18,6 +21,11 @@ body{
 .borderCard{
     border: #2F3841 1px;
     border-radius: 4px;
+     transition: transform .2s;
+}
+
+.borderCard:hover{
+      transform: scale(1.1); 
 }
 
 .Header{

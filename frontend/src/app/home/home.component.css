@@ -16,6 +16,12 @@ display: -webkit-box;
 height:15ex;
 }
 
+.carouselSize{
+
+    padding:1%;
+    height:500px;
+}
+
 .wrappTitle{
     height: 5ex;
     overflow: hidden;
