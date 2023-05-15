@@ -1,21 +1,59 @@
-<!-- <div *ngIf="product">
-  <div class="media" >
-    <img class="card-img-top"  class="mr-3" [src]="product.image" alt="{{ product.title }}">
-    <div class="media-body">
-      <h5 class="title" for="card-title" >{{ product.title }}</h5>
-      <h6 class="card-text">{{ product.description }}</h6>
-      <p class="card-genre">Genre: {{product.price}}</p>
-      <p class="card-duration">Duration: {{ product.category }} mins</p>
-      <p class="year">Year: {{ product.availableStock }}</p>
-      <button style="background-color: #BAFF39; color: black;" class="btn btn-outline-success">
-        <i class="bi bi-save2"></i>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-save2" viewBox="0 0 16 16">
-          <path d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v4.5h2a.5.5 0 0 1 .354.854l-2.5 2.5a.5.5 0 0 1-.708 0l-2.5-2.5A.5.5 0 0 1 5.5 6.5h2V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z"/>
-        </svg>
-        Add To My Watchlist</button>
+
+<div class='card'>
+  <div class='card-header'>
+    {{pageTitle + ': ' + product?.title}}
+  </div>
+
+  <div class='card-body'
+       *ngIf='product'>
+    <div class='row'>
+      <div class='col-md-8'>
+        <div class='row'>
+          <div class='col-md-4'>Name:</div>
+          <div class='col-md-8'>{{product.title}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4'>Code:</div>
+          <div class='col-md-8'>{{product.size }}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4'>Description:</div>
+          <div class='col-md-8'>{{product.description}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4'>Availability:</div>
+          <div class='col-md-8'>{{product.color}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4'>Price:</div>
+          <div class='col-md-8'>{{product.price|currency:'ZAR':'R'}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4'>5 Star Rating:</div>
+          <div class='col-md-8'>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-4'>
+        <img class='center-block img-responsive'
+             [style.width.px]='200'
+             [style.margin.px]='2'
+             [src]='product.image'
+             [title]='product.title'>
+      </div>
     </div>
   </div>
-</div> -->
+
+  <div class='card-footer'>
+    <button class='btn btn-outline-secondary'
+            style='width:80px'
+            (click)='onBack()'>
+      <i class='fa fa-chevron-left'></i> Back
+    </button>
+  </div>
+</div>
 
 
 

@@ -1,9 +1,43 @@
+// import { Component, OnInit } from '@angular/core';
+// import { ProductsService } from '../services/products.service';
+// import {Product } from '../models/Product';
+// import { Observable } from 'rxjs';
+// import { ActivatedRoute } from '@angular/router';
+// import { Location } from '@angular/common';
+
+
+// export class ProductsDetailsComponent implements OnInit {
+//   product: Product | undefined
+
+//     constructor(
+//     private route: ActivatedRoute,
+//     private productsService: ProductsService,
+//     private location: Location
+//     ){}
+
+//   ngOnInit(): void {
+//         this.get_Product();
+//       }
+
+//       get_Product(): void {
+//             const id = (this.route.snapshot.paramMap.get('id'));
+//             console.log("this is an id :",id)
+//             this.productsService.get(id)
+//               .subscribe((product:any) =>{
+//                 console.log(product)
+//                 this.product = product;
+//               } );
+  
+//             }
+// }
+
+
+
+
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Product } from '../models/Product';
 import { ProductsService } from '../services/products.service';
-import {Product } from '../models/Product';
-import { Observable } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-products-details',
@@ -11,70 +45,33 @@ import { Location } from '@angular/common';
   styleUrls: ['./products-details.component.css']
 })
 export class ProductsDetailsComponent implements OnInit {
-  product: Product | undefined
+  pageTitle = 'Product Detail';
+  errorMessage = '';
+  product: Product | undefined;
 
-    constructor(
-    private route: ActivatedRoute,
-    private productsService: ProductsService,
-    private location: Location
-    ){}
+  constructor(private route: ActivatedRoute,
+              private router: Router,
+              private productsService: ProductsService) {
+  }
 
   ngOnInit(): void {
-        this.get_Product();
-      }
+    const id = Number(this.route.snapshot.paramMap.get('id')).toString();
+    if (id) {
+      this.getProduct(id);
+    }
+  }
 
-      get_Product(): void {
-            const id = (this.route.snapshot.paramMap.get('id'));
-            console.log("this is an id :",id)
-            this.productsService.get(id)
-              .subscribe((product:any) =>{
-                console.log(product)
-                this.product = product;
-              } );
-  
-            }
+  getProduct(id: string): void {
+    this.productsService.getProduct(id).subscribe({
+      next: product => this.product = product,
+      error: err => this.errorMessage = err
+    });
+  }
+
+  onBack(): void {
+    this.router.navigate(['/products']);
+  }
 }
-
-
-
-
-// import { Component, OnInit } from '@angular/core';
-// import { ProductService } from '../Services/product.service';
-// import { Movie } from '../types/data-types';
-// import { Observable } from 'rxjs';
-// import { ActivatedRoute } from '@angular/router';
-// import { Location } from '@angular/common';
-// //youb have to import the cart services and function
-
-// @Component({
-//   selector: 'app-watch-button',
-//   templateUrl: './watch-button.component.html',
-//   styleUrls: ['./watch-button.component.scss']
-// })
-// export class WatchButtonComponent implements OnInit{
-
-//   movie: Movie | undefined
-
-//   constructor(
-//     private route: ActivatedRoute,
-//     private productService: ProductService,
-//     private location: Location
-//     ){}
-
-//   ngOnInit(): void {
-//     this.get_Movie();
-//   }
-
-
-//    get_Movie(): void {
-//     const id = (this.route.snapshot.paramMap.get('id'));
-//     console.log("this is an id :",id)
-//     this.productService.get(id)
-//       .subscribe((movie:any) =>{
-//         console.log(movie)
-//         this.movie = movie;
-//       } );
-//   }
 
 
 

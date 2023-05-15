@@ -16,7 +16,7 @@ const routes: Routes = [
 {path: 'register', component:RegisterComponent},
 {path: 'cart', component:CartComponent},
 {path: 'breadcrumb', component:BreadcrumbComponent},
-{path: 'products-details', component:ProductsDetailsComponent},
+{path: 'products/:id', component:ProductsDetailsComponent},
 {path: 'navBar', component:NavbarComponent},
 {path: 'login', component:LoginComponent},
 {path: 'footer', component:FooterComponent},
