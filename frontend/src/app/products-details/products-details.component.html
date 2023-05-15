@@ -1,10 +1,77 @@
 
-<ol class="breadcrumb">
+<ol class="breadcrumb breadcrumbMargin">
     <li class="breadcrumb-item"><a href="#" routerLink="/home"> Home</a></li>
     <li class="breadcrumb-item active"  aria-current="page">View Products</li>
   </ol>
 
+
+
+  <div class="card m-10 ml-32 mr-32"  *ngIf='product'>
+    <!-- <div class='card-header'>
+      {{pageTitle + ': ' + product?.title}}
+    </div> -->
+
+   <div class="card-body">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{product.image}}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title wrappTitle" style="font-size: larger;">{{product?.title}}</h5>
+          <h5 class="card-title font-bold price" style="font-size: large; color:green">{{product.price | currency : 'ZAR' : 'R'}}</h5>
+       
+       <div class="card">
+        <div class="card-body">
+          <h5 class="card-text font-bold">size: <small class="text-muted">Select an option</small></h5>
+
+          <div class="btn-toolbar mt-2" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group me-2" role="group" aria-label="First group">
+              <button type="button" class="btn btn-outline-secondary">S</button>
+              <button type="button" class="btn btn-outline-secondary">M</button>
+              <button type="button" class="btn btn-outline-secondary">L</button>
+              <button type="button" class="btn btn-outline-secondary">XL</button>
+            </div>
+           
+          </div>
+
+          <br>
+
+          <h5 class="card-text font-bold">Details: </h5>
+          <p class="card-text">{{product?.description}}</p>
+
+          <br>
+          <h5 class="card-text font-bold">Color: <small class="text-muted">{{product?.color}}</small></h5>
+
+
+          <p class="card-text"><small class="text-muted">Items remaining: {{product?.availableStock}}</small></p>
+         <br>
+         <button type="button" class="btn btn-outline-success mr-2">
+          Buy <span class="badge bg-secondary"></span>
+        </button>
+          <button type="button" class="btn btn-outline-success">
+            Add to cart <span class="badge bg-secondary"></span>
+          </button>
+          
+        </div>
+       </div>
+
+        </div>
+        
+      </div>
+    </div>
+   </div>
+
+
+   
+  </div>
+
+
+<!-- 
 <div class='card'>
+  <div class="row g-o">
+
+
   <div class='card-header'>
     {{pageTitle + ': ' + product?.title}}
   </div>
@@ -58,6 +125,7 @@
     </button>
   </div>
 </div>
+</div>
 
 
 
@@ -65,4 +133,4 @@
 
 
 
-
+ -->
