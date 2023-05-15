@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CartService } from '../services/cart.service';
+import { Product } from '../models/Product';
 
 @Component({
   selector: 'app-navbar',
@@ -6,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-
+ constructor(public cartService: CartService) {}
 }

@@ -1,4 +1,19 @@
+
 .navbar-brand{
-    width: 4rem;
-    height:4rem;
+    height:50px;
+    width:50px;
+}
+
+.paddingControl{
+    padding:16px;
+}
+
+.logoImage{
+    margin-top:-4px;
+  
+}
+
+.totalCard{
+background-color: azure;
+padding:8px;
 }

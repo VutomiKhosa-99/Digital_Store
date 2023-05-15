@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { StorageService } from './services/storage.service';
 import { AuthService } from './services/auth.service';
 import { EventBusService } from './_shared/event-bus.service';
+import { CartService } from './services/cart.service';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,8 @@ export class AppComponent {
   constructor(
     private storageService: StorageService,
     private authService: AuthService,
-    private eventBusService: EventBusService
+    private eventBusService: EventBusService,
+    public cartService: CartService
   ) {}
 
   ngOnInit(): void {

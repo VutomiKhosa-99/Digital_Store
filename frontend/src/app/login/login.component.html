@@ -5,76 +5,6 @@
       <li class="breadcrumb-item active" aria-current="page">Login</li>
     </ol>
   </nav>
-    <!-- <div class="container mx-auto p-4 bg-white">
-        <div class="w-full md:w-1/2 lg:w-1/3 mx-auto my-12">
-          <h1 class="text-lg font-bold">Login</h1>
-
-          <form class="flex flex-col mt-4" [formGroup]="myReactiveForm" (ngSubmit)="submit()"> -->
-
-
-        <!-- <input type="text"
-        name="emailInput_id"
-        formControlName="emailInput"
-        placeholder="Email address"
-        class="form-control"
-        class="px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
-        (input)="myReactiveForm.get('emailInput').updateValueAndValidity()"
-        >
-      <div  *ngIf="myReactiveForm.get('emailInput').invalid && myReactiveForm.get('emailInput').touched" class="alert">Email address required</div>
-
-<br>
-
-
-        <input type="password"
-        name="passwordInput_id"
-        formControlName="passwordInput"
-        placeholder="Password"
-        class="form-control"
-        class="px-4 py-3 mt-4 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
-        (input)="myReactiveForm.get('PasswordInput').updateValueAndValidity()"
-        >
-        <div  *ngIf="myReactiveForm.get('passwordInput').invalid && myReactiveForm.get('passwordInput').touched" class="alert">Password required</div>  -->
-
-        <!-- <input
-        type="email"
-        name="emailInput_id"
-        class="form-control"
-        class="px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
-        placeholder="Full Name"
-        formControlName="emailInput"
-        (input)="myReactiveForm.get('emailInput').updateValueAndValidity()"
-    />
-
-    <div class="text-danger" *ngIf="myReactiveForm.get('emailInput').invalid && (myReactiveForm.get('emailInput').dirty || myReactiveForm.get('emailInput').touched)" class="alert">
-        Please provide a email.
-    </div>
-    <input
-        type="password"
-        formControlName="passwordInput"
-        class="px-4 py-3 mt-4 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
-        placeholder="Email address"
-        formControlName="passwordInput"
-        (input)="myReactiveForm.get('passwordInput').updateValueAndValidity()"
-    />
-
-    <div *ngIf="myReactiveForm.get('passwordInput').invalid && (myReactiveForm.get('passwordInput').dirty || myReactiveForm.get('passwordInput').touched)" class="alert">
-        Please provide a password.
-      </div>
-
-            <button
-                type="submit"
-                class="mt-4 px-4 py-3  leading-6 text-base rounded-md border border-transparent text-white focus:outline-none bg-blue-500 text-blue-100 hover:text-white focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer inline-flex items-center w-full justify-center items-center font-medium focus:outline-none"
-            >
-              Login
-            </button>
-            <div class="flex flex-col items-center mt-5">
-              <p class="mt-1 text-xs font-light text-gray-500">
-                Dont have an account?<a routerLink="/register" class="ml-1 font-medium text-blue-400">Register now</a>
-                </p>
-            </div>
-          </form>
-        </div>
-      </div> -->
 
       <div class="col-md-12">
         <div class="card card-container">
@@ -125,9 +55,15 @@
               </div>
             </div>
             <div class="form-group">
-              <button class="btn btn-primary btn-block">
+              <button class="mt-4 px-4 py-3  leading-6 text-base rounded-md border border-transparent text-white focus:outline-none bg-blue-500 text-blue-100 hover:text-white focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer inline-flex items-center w-full justify-center items-center font-medium focus:outline-none"
+              >
                 Login
               </button>
+              <div class="flex flex-col items-center mt-5">
+                <p class="mt-1 text-xs font-light text-gray-500">
+                  Dont have an account?<a routerLink="/register" class="ml-1 font-medium text-blue-400">Register now</a>
+                  </p>
+              </div>
             </div>
             <div class="form-group">
               <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger" role="alert">

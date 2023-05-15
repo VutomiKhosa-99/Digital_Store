@@ -17,9 +17,11 @@ import { ProductsDetailsComponent } from './products-details/products-details.co
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
+import { ProductCardComponent } from './product-card/product-card.component';
+
 
 @NgModule({
-  declarations: [
+  declarations: [			
     AppComponent,
     HomeComponent,
     LoginComponent,
@@ -28,8 +30,9 @@ import { httpInterceptorProviders } from './_helpers/http.interceptor';
     FooterComponent,
     CartComponent,
     ProductsDetailsComponent,
-    BreadcrumbComponent
-  ],
+    BreadcrumbComponent,
+    ProductCardComponent,
+   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
