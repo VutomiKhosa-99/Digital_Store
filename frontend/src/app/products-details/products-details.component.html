@@ -18,15 +18,24 @@
 </div> -->
 
 
+<div class="card mb-3" *ngIf="product">
+  <img src="{{product?.image}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{product?.title}}</h5>
+    <p class="card-text">{{product?.description}}</p>
+    <p class="card-text"><small class="text-muted">Stock available: {{product?.availableStock}}</small></p>
+  </div>
+</div>
 
 
 
 
-<ol class="breadcrumb">
+
+<!-- <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="#" routerLink="/home"> Home</a></li>
     <li class="breadcrumb-item active"  aria-current="page">View Products</li>
-  </ol>
-<div class="card mb-3" *ngIf="product" style="max-width: 50%; margin-left: auto;margin-right: auto; padding: 10%;">
+  </ol> -->
+<!-- <div class="card mb-3" *ngIf="product" style="max-width: 50%; margin-left: auto;margin-right: auto; padding: 10%;">
     <div class="row g-0" >
       <div class="col-md-3" >
         <img class="card-img-top"  class="mr-3" [src]="product.image" alt="{{ product.image }}">
@@ -39,6 +48,6 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
