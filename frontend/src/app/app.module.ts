@@ -19,6 +19,7 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
     ProductsDetailsComponent,
     BreadcrumbComponent,
     ProductCardComponent,
+    ProfileComponent,
    ],
   imports: [
     BrowserModule,
