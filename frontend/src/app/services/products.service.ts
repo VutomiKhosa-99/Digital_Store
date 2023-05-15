@@ -13,13 +13,16 @@ export class ProductsService {
   
   constructor(private httpClient: HttpClient) { }
 
-  getAllProducts() : Observable<Array<Product>> {
+  getAllProducts(): Observable<Array<Product>> {
     return this.httpClient.get<Array<Product>>(
       `${URL}/products  
      `
     )
 
   }
+
+ 
+
 
   
   //getting product by id

@@ -15,6 +15,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductsDetailsComponent } from './products-details/products-details.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     FooterComponent,
     CartComponent,
     ProductsDetailsComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,17 @@
-<p>cart works!</p>
+
+
+<div (click)="removeFromCart()" class="body borderCard ontainer">
+<div class="Header">
+
+
+  <img src="{{ product?.image }}" style="text-align: center;"  class="w-12 h-12 object-cover rounded-full border-base-300 border-4" alt="...">
+</div>
+ 
+  <div class="flex flex-col justify-end Header Heading">
+    <div class="text-[0.7rem]">{{ product?.title }}</div>
+    <div class="font-bold text-left">R{{ product?.price }}</div>
+  </div>
+</div>
+
+
+
