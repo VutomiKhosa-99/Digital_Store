@@ -21,13 +21,16 @@ export class ProductsService {
 
   }
 
- 
+  
 
-
+getOneProduct(id: string): Observable<Product> {
+    return this.httpClient.get<Product>(`${URL}/products/${id}`);
+  }
   
   //getting product by id
   get(id: any): Observable<any> {
     return this.httpClient.get('${this.URL}/Product/${id}');
+    
   }
   
 }

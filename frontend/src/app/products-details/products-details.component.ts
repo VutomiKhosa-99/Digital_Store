@@ -12,20 +12,57 @@ import { Location } from '@angular/common';
 })
 export class ProductsDetailsComponent implements OnInit {
 
-    products: Product[] = []
+  products: Product[] = []
+  Sproduct: Product
+  
+  pId: string;
+  @Input() product?: Product;
 
-   @Input() product?: Product;
-
-    constructor(
+  constructor(
     private route: ActivatedRoute,
     private productsService: ProductsService,
-    ){}
+  ) { }
 
   ngOnInit(): void {
-      }
+    let _id = this.route.snapshot.paramMap.get('_id');
+    this.pId = _id
+    this.getProduct()
+  }
+  
+ getProduct() {
+    this.productsService.getOneProduct(this.pId).subscribe(prod => {
+     // this.products = products
+      console.warn(prod,"mmm")
+       
+    })
+   
+ 
+
+  }
+
+
+  
+
+ // getProducts() {
+     //  this.productsService.get()
+    // this.productsService.get(this.pId).subscribe(product => {
+    //   this.product = product
+    //   console.warn(this.product," product received")
+       
+    // })
+
+//  }
+
+
+
+  // getSelectedProduct() {
+  //   this.productsService.get(this.pId)
+  //   console.log(this.product, "test id")
+
+  // }
 
      
-}
 
+}
 
 
