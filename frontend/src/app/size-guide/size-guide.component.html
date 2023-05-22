@@ -9,10 +9,10 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title font-semibold" id="exampleModalLabel">{{product?.title}} size guide</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close btn-outline-secondary" style="color:black" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <table class="table text-center">
+            <table class="table text-center table-striped">
                
         
              <thead class="table-dark">
@@ -61,21 +61,71 @@
                     <td>46-47cm (18in)</td>
                     <td>122-127cm</td>
                   </tr>
+                </tbody>
+              </table>
+        </div>
+        
+        <div class="modal-body">
+            <table class="table text-center table-striped">
+               
+        
+             <thead class="table-dark">
                   <tr>
-                    <th scope="row">XXL</th>
-                    <td>48-50</td>
-                    <td>48-50cm (19in)</td>
-                    <td>132-137cm</td>
+                    <th scope="col">Alpha sizing</th>
+                    <th scope="col">Numeric sizing</th>
+                    <th scope="col">Waist</th>
+                    <th scope="col">Hip</th>
                   </tr>
+                </thead>
+            
+                <tbody>
+                    <tr>
+                        <th scope="row">XXS</th>
+                        <td>30</td>
+                        <td>33cm (13in)</td>
+                        <td>76-79cm</td>
+                      </tr>
+                  <tr>
+                    <th scope="row">XS</th>
+                    <td>30-32</td>
+                    <td>35cm (13.5in)</td>
+                    <td>79-82cm</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">S</th>
+                    <td>32-34</td>
+                    <td>36-37cm (14in)</td>
+                    <td>82-87cm</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">M</th>
+                    <td>36-38</td>
+                    <td>38-39cm (15in)</td>
+                    <td>92-97cm</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">L</th>
+                    <td>40-42</td>
+                    <td>41-42cm (16in)</td>
+                    <td>102-107cm</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">XL</th>
+                    <td>44-46</td>
+                    <td>46-47cm (18in)</td>
+                    <td>122-127cm</td>
+                  </tr>
+              
                  
                  
                 </tbody>
               </table>
+              <br>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-outline-primary">Save changes</button>
+        </div> -->
       </div>
     </div>
   </div>
