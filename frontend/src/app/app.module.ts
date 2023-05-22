@@ -20,6 +20,7 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProfileComponent } from './profile/profile.component';
+import { SizeGuideComponent } from './size-guide/size-guide.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { ProfileComponent } from './profile/profile.component';
     BreadcrumbComponent,
     ProductCardComponent,
     ProfileComponent,
+    SizeGuideComponent,
    ],
   imports: [
     BrowserModule,

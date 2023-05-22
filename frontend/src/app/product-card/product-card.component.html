@@ -1,14 +1,14 @@
 <div  class="card">
-    <img src="{{ product.image }}" class="card-img-top" alt="...">
+    <img src="{{ product?.image }}" class="card-img-top imageSize" alt="...">
     <div class="card-body">
-      <h1 class="card-title wrappTitle">{{product.title}}</h1>
-       <p class="card-text" style="font-size: small; font-weight: bold;">{{product.color}}</p>
-      <h5 class="card-title font-bold price" style="font-size: large; color:green">{{product.price | currency : 'ZAR' : 'R'}}</h5>
+      <h1 class="card-title wrappTitle">{{product?.title}}</h1>
+       <p class="card-text" style="font-size: small; font-weight: bold;">{{product?.color}}</p>
+      <h5 class="card-title font-bold price">{{product?.price | currency : 'ZAR' : 'R'}}</h5>
       
-      <p class="card-text wrappDetails">{{product.description}}</p>
+      <p class="card-text wrappDetails">{{product?.description}}</p>
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <!-- <a class="badge rounded-pill bg-secondary" type="button" [routerLink]="['products/', product._id]">View more</a> -->
-        <a class="badge rounded-pill bg-secondary" type="button" routerLink="/products/{{product._id}}">View more</a>
+        <span class="badge rounded-pill bg-secondary" type="button" routerLink="/products/{{product?._id}}">View more</span>
 
         <span  (click)="addToCart()" class="badge rounded-pill bg-success" type="button">Add to cart</span>
       </div>

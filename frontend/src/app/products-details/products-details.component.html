@@ -14,12 +14,12 @@
    <div class="card-body">
     <div class="row g-0">
       <div class="col-md-4">
-        <img src="{{product.image}}" class="img-fluid rounded-start" alt="...">
+        <img src="{{product?.image}}" class="img-fluid rounded-start" alt="...">
       </div>
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title wrappTitle" style="font-size: larger;">{{product?.title}}</h5>
-          <h5 class="card-title font-bold price" style="font-size: large; color:green">{{product.price | currency : 'ZAR' : 'R'}}</h5>
+          <h5 class="card-title font-bold price" style="font-size: large; color:green">{{product?.price | currency : 'ZAR' : 'R'}}</h5>
        
        <div class="card">
         <div class="card-body">
@@ -46,6 +46,13 @@
 
           <p class="card-text"><small class="text-muted">Items remaining: {{product?.availableStock}}</small></p>
          <br>
+
+         <h5 class="card-text font-bold sizeGuide" data-bs-toggle="modal" type="submit" data-bs-target="#exampleModal">Size guide: </h5>
+         <app-size-guide></app-size-guide>
+         
+         <br>
+
+
          <button type="button" class="btn btn-outline-success mr-2">
           Buy <span class="badge bg-secondary"></span>
         </button>

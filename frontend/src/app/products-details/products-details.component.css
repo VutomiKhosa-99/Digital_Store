@@ -33,3 +33,13 @@
     .mainContainer{
         margin:20px
     }
+
+    .sizeGuide{
+        color:black;
+        background-color: aliceblue;
+
+    }
+
+    .sizeGuide:hover{
+        color:darkgrey;
+    }
