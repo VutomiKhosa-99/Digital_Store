@@ -6,7 +6,7 @@
 
 
 
-  <div class="card m-10 ml-32 mr-32"  *ngIf='product'>
+  <div class="card m-10 ml-32 mr-32"  *ngIf='product' >
     <!-- <div class='card-header'>
       {{pageTitle + ': ' + product?.title}}
     </div> -->
@@ -47,8 +47,8 @@
           <p class="card-text"><small class="text-muted">Items remaining: {{product?.availableStock}}</small></p>
          <br>
 
-         <h5 class="card-text font-bold sizeGuide" data-bs-toggle="modal" type="submit" data-bs-target="#exampleModal">Size guide: </h5>
-         <app-size-guide></app-size-guide>
+         <h5 class="card-text font-bold sizeGuide" data-bs-toggle="modal" type="submit" data-bs-target="#exampleModal">View size guide: </h5>
+         <app-size-guide  [product]="product"></app-size-guide>
          
          <br>
 

@@ -35,7 +35,12 @@
     }
 
     .sizeGuide{
+        display: flex;
         color:black;
+        height:46px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
         background-color: aliceblue;
 
     }
