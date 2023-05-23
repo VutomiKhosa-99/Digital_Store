@@ -21,6 +21,7 @@ import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SizeGuideComponent } from './size-guide/size-guide.component';
+import { CartTableComponent } from './cart-table/cart-table.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { SizeGuideComponent } from './size-guide/size-guide.component';
     ProductCardComponent,
     ProfileComponent,
     SizeGuideComponent,
+    CartTableComponent,
    ],
   imports: [
     BrowserModule,
