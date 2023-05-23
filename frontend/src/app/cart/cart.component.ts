@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CartService } from '../services/cart.service';
+import { Product } from '../models/Product';
 
 @Component({
   selector: 'app-cart',
@@ -7,4 +9,22 @@ import { Component } from '@angular/core';
 })
 export class CartComponent {
 
+  @Input() product?: Product;
+
+  constructor(public cartService: CartService) { }
+  
+  addToCart() {
+         this.cartService.addToCart(this.product)
+console.log(this.product,"dds")
+    // if (this.product) {
+    //   this.cartService.addToCart(this.product)
+    // }
+  }
+
+   removeFromCart() {
+    if (this.product) {
+      this.cartService.removeFromCart(this.product?._id);
+    }
+  }
 }
+

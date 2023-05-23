@@ -50,20 +50,20 @@ res.json(this.productObj)
 // @desc Get PRODUCT BY id
 // @route GET /productId
 // @access Private
-const getProductById = async (req, res) => {
+const getProductById = (req, res) => {
     // Get all users from MongoDB
     try {
-        const id = req.params.id
-        const productObj = await Product.findById(id)
-        res.status(200).json(productObj)
+        const _id = req.params.id
+         Product.findById(_id)
+         .then(data => {
+            if(!data) res.status(404).send({ message: 'No product with id '+ _id })
+            else res.status(200).send(data)
+         })
     } catch (err){
-        // res.status(404).json({ message: err.message})
-        res.status(404).json({ message: "No product found"})
+     
+        res.status(500).send({ message: "No product found with id: " + _id})
 
     }
-
-
-    res.json(this.productObj)
 }
 
 

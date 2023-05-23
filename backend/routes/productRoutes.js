@@ -12,6 +12,7 @@ router.route('/:id')
 
     
 router.route('/:id')
+
     .delete(productController.DeleteProduct)
 
     

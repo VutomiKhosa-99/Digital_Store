@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule , FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,8 +17,14 @@ import { CartComponent } from './cart/cart.component';
 import { ProductsDetailsComponent } from './products-details/products-details.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
+import { httpInterceptorProviders } from './_helpers/http.interceptor';
+import { ProductCardComponent } from './product-card/product-card.component';
+import { ProfileComponent } from './profile/profile.component';
+import { SizeGuideComponent } from './size-guide/size-guide.component';
+
+
 @NgModule({
-  declarations: [
+  declarations: [			
     AppComponent,
     HomeComponent,
     LoginComponent,
@@ -22,13 +33,21 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     FooterComponent,
     CartComponent,
     ProductsDetailsComponent,
-    BreadcrumbComponent
-  ],
+    BreadcrumbComponent,
+    ProductCardComponent,
+    ProfileComponent,
+    SizeGuideComponent,
+   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    ReactiveFormsModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule
+
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
