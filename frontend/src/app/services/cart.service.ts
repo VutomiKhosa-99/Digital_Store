@@ -27,6 +27,21 @@ export class CartService {
     return total;
   }
 
+  getTaxAmount(): number {
+
+    let percent = 15/100
+    let tax = (this.getTotalPrice() * percent)
+    console.log(tax,"this the tax");
+    
+
+    return tax;
+  }
+
+  getSubTotal(): number {
+    
+    return 30 + this.getTaxAmount() + this.getTotalPrice()
+  }
+
  removeFromCart(productId: string) {
     this.cartProducts = this.cartProducts.filter(product => product._id !== productId)
   }
