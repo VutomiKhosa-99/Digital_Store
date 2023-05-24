@@ -37,9 +37,8 @@ app.use('/', require('./routes/root'))
 require("./routes/authRoutes")(app)
 require("./routes/userRoutes")(app)
 
-// app.use('/auth', require('./routes/authRoutes'))
-// app.use('/users', require('./routes/userRoutes'))
 app.use('/products', require('./routes/productRoutes'))
+app.use('/carts', require('./routes/cartRoutes'))
 
 app.all('*', (req, res) => {
     res.status(404)

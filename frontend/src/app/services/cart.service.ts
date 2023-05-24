@@ -17,6 +17,8 @@ export class CartService {
     console.log(product, "prod added in cart")
   }
 
+  
+
   getTotalPrice(): number {
     let total = 0;
 

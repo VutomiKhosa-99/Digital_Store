@@ -1,4 +1,4 @@
-
+const Cart = require('../models/Cart')
 // @desc Get all products
 // @route GET /products
 
@@ -18,10 +18,24 @@ const getAllCartItems = async (req, res) => {
 }
 
 
+// @access Private
+const getAllUserCarts = async (req, res) => {
+    // Get all cart items from MongoDB
+    const cartItemObj = await Cart.find()
+
+    // If no items 
+    if (!cartItemObj?.length) {
+        return res.status(400).json({ message: 'No items found' })
+    }
+
+    res.json(cartItemObj)
+}
+
+
 // @desc Get all products
 // @route GET /products
 // @access Private
-const DeleteFromCart = async (req, res) => {
+const DeleteItemFromCart = async (req, res) => {
   
   // Get all users from MongoDB
   try {
@@ -56,12 +70,32 @@ const getItemById = (req, res) => {
         const _id = req.params.id
          CartItem.findById(_id)
          .then(data => {
-            if(!data) res.status(404).send({ message: 'No product with id '+ _id })
+            if(!data) res.status(404).send({ message: 'No cart with id '+ _id })
             else res.status(200).send(data)
          })
     } catch (err){
      
-        res.status(500).send({ message: "No product found with id: " + _id})
+        res.status(500).send({ message: "No cart found with id: " + _id})
+
+    }
+}
+
+
+// @desc Get PRODUCT BY id
+// @route GET /productId
+// @access Private
+const getCartById = (req, res) => {
+    // Get all users from MongoDB
+    try {
+        const _id = req.params.id
+         Cart.findById(_id)
+         .then(data => {
+            if(!data) res.status(404).send({ message: 'No cart with id '+ _id })
+            else res.status(200).send(data)
+         })
+    } catch (err){
+     
+        res.status(500).send({ message: "No cart found with id: " + _id})
 
     }
 }
@@ -71,6 +105,31 @@ const getItemById = (req, res) => {
 // @route POST /products
 // @access Private
 const createNewCart = async (req, res) => {
+    const { userId, userEmail, itemsArray } = req.body
+
+    // Confirm form
+    // if (!id || !userId || !userEmail || !itemsArray)  {
+    //     return res.status(400).json({ message: 'All fields are required' })
+    // }
+
+    const cartObject = {userId, userEmail, itemsArray}
+
+    // Create and store new cart
+    const cart = await Cart.create(cartObject)
+
+    if (cart) { //created 
+        res.status(201).json({ message: 'New cart created' })
+    } else {
+        res.status(400).json({ message: 'Invalid cart data received' })
+    }
+}
+
+
+
+// @desc Create new product
+// @route POST /products
+// @access Private
+const createNewCartItem = async (req, res) => {
     const { id, userId, userEmail } = req.body
 
     // Confirm form
@@ -86,14 +145,17 @@ const createNewCart = async (req, res) => {
     if (cart) { //created 
         res.status(201).json({ message: 'New cart created' })
     } else {
-        res.status(400).json({ message: 'Invalid product data received' })
+        res.status(400).json({ message: 'Invalid cart data received' })
     }
 }
 
-
 module.exports = {
-    getAllProducts,
-    createNewProduct,
-    getProductById,
-    DeleteProduct
+    getAllCartItems,
+    getAllUserCarts,
+    DeleteItemFromCart,
+    getItemById,
+    getCartById,
+    createNewCart,
+    createNewCartItem
+
 }

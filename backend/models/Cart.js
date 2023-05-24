@@ -1,19 +1,31 @@
 const mongoose = require('mongoose')
+// const CartItem = require('./CartItem')
 
 const cartSchema = new mongoose.Schema({
     
 
-  id: {
-    type: mongoose.Schema.Types.ObjectId
-  },
+  // id: {
+  //   type: String,
+  //   require:false
+  // },
  
       userId: {
-        type: mongoose.Schema.Types.ObjectId
+        type: String,
+        require:false
+
       },
       userEmail: {
-        type: String
-      },    
-},
+        type: String,
+        require:false
+
+      },  
+      itemsArray: [{
+         itemId: String ,
+         quantity: Number,
+         _id:false
+        }]
+    },
+
     { timestamps: true }
 )
 
