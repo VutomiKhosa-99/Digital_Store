@@ -22,6 +22,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SizeGuideComponent } from './size-guide/size-guide.component';
 import { CartTableComponent } from './cart-table/cart-table.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { CartTableComponent } from './cart-table/cart-table.component';
     ProfileComponent,
     SizeGuideComponent,
     CartTableComponent,
+    InvoiceComponent,
    ],
   imports: [
     BrowserModule,
