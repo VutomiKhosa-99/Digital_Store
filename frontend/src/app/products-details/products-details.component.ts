@@ -13,6 +13,8 @@ export class ProductsDetailsComponent implements OnInit {
   pageTitle = 'Product Detail';
   errorMessage = '';
   product: Product | undefined;
+reviews: any;
+
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -24,6 +26,7 @@ export class ProductsDetailsComponent implements OnInit {
     if (id) {
       this.getProduct(id);
     }
+    
   }
 
   getProduct(id: string): void {
@@ -33,10 +36,13 @@ export class ProductsDetailsComponent implements OnInit {
     });
   }
 
+
   onBack(): void {
     this.router.navigate(['/']);
   }
+
 }
+
 
 
 

@@ -51,6 +51,11 @@
          <app-size-guide  [product]="product"></app-size-guide>
          
          <br>
+         <!-- Existing code for product details -->
+
+<!-- Button to navigate to the reviews page -->
+<button type="button" class="btn btn-primary" [routerLink]="['/reviews', reviews._id]">View Reviews</button>
+
 
 
          <button type="button" class="btn btn-outline-success mr-2">
@@ -68,7 +73,7 @@
       </div>
     </div>
    </div>
-
+   
 
    
   </div>
@@ -141,3 +146,4 @@
 
 
  -->
+ 

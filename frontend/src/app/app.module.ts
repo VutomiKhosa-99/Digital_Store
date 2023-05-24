@@ -36,7 +36,7 @@ import { SizeGuideComponent } from './size-guide/size-guide.component';
     BreadcrumbComponent,
     ProductCardComponent,
     ProfileComponent,
-    SizeGuideComponent,
+    SizeGuideComponent
    ],
   imports: [
     BrowserModule,

@@ -10,6 +10,9 @@ const URL = 'http://localhost:2000'
   providedIn: 'root'
 })
 export class ProductsService {
+  getProductById(productId: string) {
+    throw new Error('Method not implemented.');
+  }
 
   
   constructor(private httpClient: HttpClient) { }
