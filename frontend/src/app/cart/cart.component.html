@@ -1,16 +1,22 @@
 
-<div (click)="removeFromCart()" class="body borderCard">
+<div (click)="removeFromCart()" class="body borderCard  bg-slate-200 mt-2 mb-2" >
     <div class="Header">
     
     
       <img src="{{ product?.image }}" style="text-align: center;"  class="w-12 h-12 object-cover rounded-full border-base-300 border-4" alt="...">
+   
+      <div class="d-flex justify-content-between flex-col">
+        <p class="pt-2 pb-2 text-[0.7rem]">{{ product?.title }}</p>
+        <p class="pt-2 pb-2 font-bold text-right"> {{ product?.price  | currency : 'ZAR' : 'R'}}</p>
+      </div>
     </div>
-     
+
+<!--      
       <div class="flex flex-col justify-end Header Heading">
         <div class="text-[0.7rem]">{{ product?.title }}</div>
         <div class="font-bold text-left">R{{ product?.price }}</div>
-      </div>
-    </div>
+      </div> -->
+</div>
     
     
     

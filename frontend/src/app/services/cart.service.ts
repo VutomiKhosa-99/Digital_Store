@@ -17,6 +17,8 @@ export class CartService {
     console.log(product, "prod added in cart")
   }
 
+  
+
   getTotalPrice(): number {
     let total = 0;
 
@@ -25,6 +27,21 @@ export class CartService {
       
     }
     return total;
+  }
+
+  getTaxAmount(): number {
+
+    let percent = 15/100
+    let tax = (this.getTotalPrice() * percent)
+    console.log(tax,"this the tax");
+    
+
+    return tax;
+  }
+
+  getSubTotal(): number {
+    
+    return 30 + this.getTaxAmount() + this.getTotalPrice()
   }
 
  removeFromCart(productId: string) {
