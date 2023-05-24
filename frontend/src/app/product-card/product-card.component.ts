@@ -26,8 +26,6 @@ export class ProductCardComponent {
       activeCart = this.storageService.saveCartSession(this.cartService.cartProducts)
      }
   
-    
- 
   }
 
    addToCart() {

@@ -58,4 +58,9 @@ export class CartService {
   }
 
 
+  getTotalExcludeShiiping(): number {
+    
+    return  this.getTaxAmount() + this.getTotalPrice()
+  }
+
 }
