@@ -57,13 +57,13 @@
           </svg>
 
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" *ngIf="!isLoggedIn">
-            <li><a class="dropdown-item" href="#" routerLink="/login">Login</a></li>
-            <li><a class="dropdown-item" href="#" routerLink="/register">Register</a></li>
+            <li><a class="dropdown-item"  routerLink="/login">Login</a></li>
+            <li><a class="dropdown-item"  routerLink="/register">Register</a></li>
           
           </ul>
 
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" *ngIf="isLoggedIn">
-            <li><a class="dropdown-item" href="#" routerLink="/login" (click)="logout()">Logout</a></li>
+            <li><a class="dropdown-item" routerLink="/login" (click)="logout()">Logout</a></li>
           </ul>
         </button>
         

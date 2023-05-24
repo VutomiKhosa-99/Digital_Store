@@ -16,8 +16,11 @@ export class AppComponent {
   showAdminBoard = false;
   showModeratorBoard = false;
   username?: string;
+  numCartItems : number
 
   eventBusSub?: Subscription;
+
+
 
   constructor(
     private storageService: StorageService,
@@ -42,6 +45,15 @@ export class AppComponent {
     this.eventBusSub = this.eventBusService.on('logout', () => {
       this.logout();
     });
+
+    this.numCartItems = this.cartService.cartProducts.length
+
+    if(this.cartService.cartProducts.length>0){
+
+    }
+
+
+
   }
 
   logout(): void {
