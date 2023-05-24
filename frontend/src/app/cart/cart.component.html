@@ -1,17 +1,60 @@
 
-<div (click)="removeFromCart()" class="body borderCard">
-    <div class="Header">
-    
-    
-      <img src="{{ product?.image }}" style="text-align: center;"  class="w-12 h-12 object-cover rounded-full border-base-300 border-4" alt="...">
+   <div *ngIf="cart.items.length" class="container mt-4">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Product</th>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Total</th>
+          <th scope="col" class="text-right">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let element of dataSource">
+          <td>
+            <img src="{{ element.image }}" alt="product" class="w-100 my-3" />
+          </td>
+          <td>
+            <p class="truncate max-w-xs">{{ element.title }}</p>
+          </td>
+          <td>{{ element.price | currency : 'ZAR' : 'R' }}</td>
+          <td>
+            <button class="btn btn-link" (click)="onRemoveQuantity(element)">
+              <i class="bi bi-dash"></i>
+            </button>
+            <span>{{ element.quantity }}</span>
+            <button class="btn btn-link" (click)="onAddQuantity(element)">
+              <i class="bi bi-plus"></i>
+            </button>
+          </td>
+          <td>{{ element.quantity * element.price | currency : 'ZAR' : 'R' }}</td>
+          <td class="text-right">
+            <button class="btn btn-sm btn-danger" (click)="onRemoveFromCart(element)">
+              <i class="bi bi-x"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4"></td>
+          <td class="font-weight-bold">Total:</td>
+          <td class="text-right">
+            <span class="font-weight-bold">{{ getTotal(cart.items) | currency : 'ZAR' : 'R' }}</span>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+    <div class="text-right">
+      <button class="btn btn-outline-danger" (click)="onClearCart()">Clear All</button>
+      <button class="btn btn-primary" (click)="onCheckout()">Proceed To Checkout</button>
     </div>
-     
-      <div class="flex flex-col justify-end Header Heading">
-        <div class="text-[0.7rem]">{{ product?.title }}</div>
-        <div class="font-bold text-left">R{{ product?.price }}</div>
-      </div>
-    </div>
-    
-    
-    
-    
+  </div>
+  
+  <div *ngIf="!cart.items.length" class="container mt-4">
+    <p>Your cart is empty.</p>
+    <button class="btn btn-primary" routerLink="/home">Start Shopping</button>
+  </div>
+  

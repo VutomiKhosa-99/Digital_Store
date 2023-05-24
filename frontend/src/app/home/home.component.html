@@ -1,15 +1,10 @@
 
-
-<div class="row row-cols-1 row-cols-md-4 g-4 " style="padding: 2%;">
-  <div class="col" *ngFor="let product of products">
-    
-    <app-product-card [product]="product">
-
-    </app-product-card>
-      
+    <div class="grid-list" *ngIf="products && products.length">
+      <div
+        *ngFor="let product of products"
+        class="grid-tile"
+      >
+        <app-product-card [product]="product" (addToCart)="onAddToCart($event)" ></app-product-card>
+  
+      </div>
     </div>
-  
-  
-
-    </div>
-  

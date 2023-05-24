@@ -7,6 +7,9 @@ import { RouterModule } from '@angular/router';
 
 
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -21,10 +24,11 @@ import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SizeGuideComponent } from './size-guide/size-guide.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 @NgModule({
-  declarations: [			
+  declarations: [				
     AppComponent,
     HomeComponent,
     LoginComponent,
@@ -37,6 +41,7 @@ import { SizeGuideComponent } from './size-guide/size-guide.component';
     ProductCardComponent,
     ProfileComponent,
     SizeGuideComponent,
+      PaymentComponent
    ],
   imports: [
     BrowserModule,
@@ -44,7 +49,9 @@ import { SizeGuideComponent } from './size-guide/size-guide.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
 
   ],
   providers: [httpInterceptorProviders],

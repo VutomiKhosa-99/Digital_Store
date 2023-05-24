@@ -11,6 +11,7 @@ const connectDB = require('./config/dbConn')
 const mongoose = require('mongoose')
 const db = require("./models/index")
 const Role = db.role
+const axios = require('axios')
 
 PORT = process.env.PORT || 2000
 
@@ -36,10 +37,9 @@ app.use('/', require('./routes/root'))
 
 require("./routes/authRoutes")(app)
 require("./routes/userRoutes")(app)
-
-// app.use('/auth', require('./routes/authRoutes'))
-// app.use('/users', require('./routes/userRoutes'))
 app.use('/products', require('./routes/productRoutes'))
+
+
 
 app.all('*', (req, res) => {
     res.status(404)

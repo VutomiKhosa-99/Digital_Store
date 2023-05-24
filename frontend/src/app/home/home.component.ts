@@ -3,6 +3,7 @@ import { ProductsService } from '../services/products.service';
 import { Product } from '../models/Product';
 import { CartService } from '../services/cart.service';
 import { UserService } from '../services/user.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,9 @@ export class HomeComponent implements OnInit {
 
   products: Product[] = []
   
-  @Input() product?: Product;
+  productsSubscription: Subscription | undefined;
+  category: string | undefined;
+  
 
   
   constructor(
@@ -22,14 +25,32 @@ export class HomeComponent implements OnInit {
     private userService: UserService
     ) {}
 
-  
+  onShowCategory(newCategory: string): void {
+      this.category = newCategory;
+      this.getProducts();
+    }
   
   getProducts() {
     this.productsService.getAllProducts().subscribe(products => {
       this.products = products
        
     })
+  }
 
+  onAddToCart(product: Product): void {
+    this.cartService.addToCart({
+      image: product.image,
+      title: product.title,
+      price: product.price,
+      quantity: 1,
+      id: product._id,
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.productsSubscription) {
+      this.productsSubscription.unsubscribe();
+    }
   }
 
 
@@ -37,10 +58,6 @@ export class HomeComponent implements OnInit {
     this.getProducts()
   }
  
-
-  addToCart() {
-    this.cartService.addToCart(this.product)
-  }
 
 
 }

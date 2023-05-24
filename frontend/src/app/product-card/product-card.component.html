@@ -1,18 +1,43 @@
-<div  class="card">
-    <img src="{{ product?.image }}" class="card-img-top imageSize" alt="...">
+<div *ngIf="product" class="card">
+    <img src="{{ product.image }}" class="card-img-top imageSize" alt="...">
     <div class="card-body">
-      <h1 class="card-title wrappTitle">{{product?.title}}</h1>
-       <p class="card-text" style="font-size: small; font-weight: bold;">{{product?.color}}</p>
-      <h5 class="card-title font-bold price">{{product?.price | currency : 'ZAR' : 'R'}}</h5>
+      <h1 class="card-title wrappTitle">{{product.title}}</h1>
+       <p class="card-text" style="font-size: small; font-weight: bold;">{{product.color}}</p>
+      <h5 class="card-title font-bold price">{{product.price | currency : 'ZAR' : 'R'}}</h5>
       
-      <p class="card-text wrappDetails">{{product?.description}}</p>
+      <p class="card-text wrappDetails">{{product.description}}</p>
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <!-- <a class="badge rounded-pill bg-secondary" type="button" [routerLink]="['products/', product._id]">View more</a> -->
         <span class="badge rounded-pill bg-secondary" type="button" routerLink="/products/{{product?._id}}">View more</span>
 
-        <span  (click)="addToCart()" class="badge rounded-pill bg-success" type="button">Add to cart</span>
+        <span  (click)="onAddToCart()" class="badge rounded-pill bg-success" type="button">Add to cart</span>
       </div>
     </div>
   </div>
 
   
+
+   <!-- <div *ngIf="product" [ngClass]="{ 'text-center': !fullWidthMode }">
+    <div [ngClass]="{ 'd-flex': fullWidthMode }">
+      <img class="mb-1 mx-auto"
+        [ngClass]="{ 'h-200': !fullWidthMode, 'h-360': fullWidthMode }"
+        [src]="product.image" />
+      <div class="w-100"
+        [ngClass]="{ 'px-8 d-flex flex-column justify-content-between': fullWidthMode }">
+        <div>
+          <h5>{{ product.category }}</h5>
+          <p class="truncate"
+            [ngClass]="{ 'truncate': !fullWidthMode, 'whitespace-normal': fullWidthMode }">
+            {{ product.title }}
+          </p>
+          <p *ngIf="fullWidthMode">{{ product.description }}</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span class="text-danger">{{ product.price | currency }}</span>
+          <button (click)="onAddToCart()" class="btn btn-outline-primary">
+            <i class="fas fa-shopping-cart text-gray-500"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+   -->

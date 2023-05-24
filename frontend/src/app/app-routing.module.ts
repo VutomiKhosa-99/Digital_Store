@@ -9,6 +9,7 @@ import { ProductsDetailsComponent } from './products-details/products-details.co
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
 
@@ -21,6 +22,7 @@ const routes: Routes = [
 {path: 'login', component:LoginComponent},
 {path: 'footer', component:FooterComponent},
 {path: 'profile', component: ProfileComponent},
+{path: 'checkout', component: PaymentComponent},
 { path: '', redirectTo: 'home', pathMatch: 'full' }
 
 
