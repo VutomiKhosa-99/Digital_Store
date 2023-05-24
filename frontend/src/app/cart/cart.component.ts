@@ -15,10 +15,6 @@ export class CartComponent {
   
   addToCart() {
          this.cartService.addToCart(this.product)
-console.log(this.product,"dds")
-    // if (this.product) {
-    //   this.cartService.addToCart(this.product)
-    // }
   }
 
    removeFromCart() {

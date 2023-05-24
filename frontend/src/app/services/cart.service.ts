@@ -50,7 +50,7 @@ export class CartService {
 
   getSubTotal(): number {
     
-    return 30 + this.getTaxAmount() + this.getTotalPrice()
+    return 30 + this.getTotalPrice()
   }
 
  removeFromCart(productId: string) {
@@ -58,9 +58,6 @@ export class CartService {
   }
 
 
-  getTotalExcludeShiiping(): number {
-    
-    return  this.getTaxAmount() + this.getTotalPrice()
-  }
+ 
 
 }

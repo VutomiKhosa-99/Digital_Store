@@ -1,3 +1,8 @@
 .breadcrumbMargin{
     margin:16px;
 }
+
+.emptytCartImg{
+    width:50%;
+    margin-inline: auto;
+}
