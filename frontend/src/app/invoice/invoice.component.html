@@ -49,40 +49,23 @@
                <table class="table table-invoice">
                   <thead>
                      <tr>
-                        <th>TASK DESCRIPTION</th>
-                        <th class="text-center" width="10%">RATE</th>
-                        <th class="text-center" width="10%">HOURS</th>
-                        <th class="text-right" width="20%">LINE TOTAL</th>
+                        <th>Product</th>
+                        <th class="text-center" width="10%">PRICE</th>
+                        <th class="text-center" width="10%">QUANTITY</th>
+                        <th class="text-right" width="20%">TOTAL</th>
                      </tr>
                   </thead>
                   <tbody>
-                     <tr>
+                     <tr *ngFor="let product of cartService.cartProducts">
                         <td>
-                           <span class="text-inverse">Website design &amp; development</span><br>
-                           <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id sagittis arcu.</small>
+                           <span class="text-inverse">{{product?.title}}</span><br>
+                           <small>{{product?.description}}</small>
                         </td>
-                        <td class="text-center">R50.00</td>
-                        <td class="text-center">50</td>
-                        <td class="text-right">R2,500.00</td>
+                        <td class="text-center">{{product?.price | currency : 'ZAR' : 'R'}}</td>
+                        <td class="text-center">1</td>
+                        <td class="text-right">{{product?.price | currency : 'ZAR' : 'R'}}</td>
                      </tr>
-                     <tr>
-                        <td>
-                           <span class="text-inverse">Branding</span><br>
-                           <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id sagittis arcu.</small>
-                        </td>
-                        <td class="text-center">R50.00</td>
-                        <td class="text-center">40</td>
-                        <td class="text-right">R2,000.00</td>
-                     </tr>
-                     <tr>
-                        <td>
-                           <span class="text-inverse">Redesign Service</span><br>
-                           <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id sagittis arcu.</small>
-                        </td>
-                        <td class="text-center">R50.00</td>
-                        <td class="text-center">50</td>
-                        <td class="text-right">R2,500.00</td>
-                     </tr>
+                   
                   </tbody>
                </table>
             </div>
@@ -93,19 +76,19 @@
                   <div class="invoice-price-row">
                      <div class="sub-price">
                         <small>SUBTOTAL</small>
-                        <span class="text-inverse">R4,500.00</span>
+                        <span class="text-inverse">{{cartService.getSubTotal() | currency : 'ZAR' : 'R'}}</span>
                      </div>
                      <div class="sub-price">
                         <i class="fa fa-plus text-muted"></i>
                      </div>
                      <div class="sub-price">
-                        <small>PAYPAL FEE (5.4%)</small>
-                        <span class="text-inverse">R108.00</span>
+                        <small>DELIVERY</small>
+                        <span class="text-inverse">R30</span>
                      </div>
                   </div>
                </div>
                <div class="invoice-price-right">
-                  <small>TOTAL</small> <span class="f-w-600">R4508.00</span>
+                  <small>TOTAL</small> <span class="f-w-600">{{cartService.getTotalPrice() | currency : 'ZAR' : 'R'}}</span>
                </div>
             </div>
             <!-- end invoice-price -->
