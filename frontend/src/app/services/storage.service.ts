@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 
+
 const USER_KEY = 'auth-user';
+const ACTIVE_CART = 'active-cart'
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +19,21 @@ export class StorageService {
     window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
   }
 
+
+  public saveCartSession(cart: any): void {
+    window.sessionStorage.setItem(ACTIVE_CART, JSON.stringify(cart));
+  }
   
+
+  public getCart(): any {
+    const cart = window.sessionStorage.getItem(ACTIVE_CART);
+    
+    if (cart) {
+      return JSON.parse(cart);
+    }
+
+    return {};
+  }
 
 
   public getUser(): any {
@@ -37,4 +53,6 @@ export class StorageService {
 
     return false;
   }
+
+ 
 }

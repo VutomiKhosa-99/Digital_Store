@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.user = this.storageService.getUser().username;
-        this.reloadPage();
+        // this.reloadPage();
       },
       error: err => {
         this.errorMessage = err.error.message;

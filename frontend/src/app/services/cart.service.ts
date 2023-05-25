@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../models/Product';
+import { StorageService } from './storage.service';
 
 
 @Injectable({
@@ -10,13 +11,22 @@ export class CartService {
   cartProducts: Product[] = [];
   
 
-  constructor() { }
+  constructor(private storageService: StorageService) { }
 
   addToCart(product: Product) {
     this.cartProducts.push(product);
-    console.log(product, "prod added in cart")
+    this.createCartSession();
   }
 
+  createCartSession(){
+
+    this.storageService.saveCartSession(this.cartProducts);
+
+  }
+
+  getCartSession() : any{
+    return this.storageService.getCart();
+  }
   
 
   getTotalPrice(): number {
@@ -33,7 +43,6 @@ export class CartService {
 
     let percent = 15/100
     let tax = (this.getTotalPrice() * percent)
-    console.log(tax,"this the tax");
     
 
     return tax;
@@ -41,12 +50,14 @@ export class CartService {
 
   getSubTotal(): number {
     
-    return 30 + this.getTaxAmount() + this.getTotalPrice()
+    return 30 + this.getTotalPrice()
   }
 
  removeFromCart(productId: string) {
     this.cartProducts = this.cartProducts.filter(product => product._id !== productId)
   }
 
+
+ 
 
 }

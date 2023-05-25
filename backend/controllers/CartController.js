@@ -107,10 +107,10 @@ const getCartById = (req, res) => {
 const createNewCart = async (req, res) => {
     const { userId, userEmail, itemsArray } = req.body
 
-    // Confirm form
-    // if (!id || !userId || !userEmail || !itemsArray)  {
-    //     return res.status(400).json({ message: 'All fields are required' })
-    // }
+   // Confirm form
+    if (!userId || !userEmail || !itemsArray)  {
+        return res.status(400).json({ message: 'All fields are required' })
+    }
 
     const cartObject = {userId, userEmail, itemsArray}
 
