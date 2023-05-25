@@ -9,6 +9,7 @@ import { StorageService } from './storage.service';
 export class CartService {
 
   cartProducts: Product[] = [];
+  quantity = 0
   
 
   constructor(private storageService: StorageService) { }
@@ -16,6 +17,26 @@ export class CartService {
   addToCart(product: Product) {
     this.cartProducts.push(product);
     this.createCartSession();
+
+
+
+
+
+
+    // const items = [...this.cartProducts];
+
+    // const itemInCart = items.find((_item) => _item === product);
+    // console.log(itemInCart,"found in cart");
+    
+
+    // if (itemInCart) {
+    //  // itemInCart.quantity += 1;
+    // } else {
+    //  // items.push(item);
+    // }
+    // this.cart.next({ items });
+    // this.toastr.success('1 item added to cart.', 'Success', { timeOut: 3000 });
+    // console.log(items, "prod added in cart")
   }
 
   createCartSession(){
