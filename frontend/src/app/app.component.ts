@@ -6,17 +6,20 @@ import { EventBusService } from './_shared/event-bus.service';
 import { CartService } from './services/cart.service';
 import { Cart, CartItem } from './models/Cart';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
   private roles: string[] = [];
   isLoggedIn = false;
   showAdminBoard = false;
   showModeratorBoard = false;
   username?: string;
+  showDropdown: boolean = false;
 
   eventBusSub?: Subscription;
 
@@ -60,6 +63,7 @@ export class AppComponent {
       this.logout();
     });
   }
+
 
   logout(): void {
     this.authService.logout().subscribe({
