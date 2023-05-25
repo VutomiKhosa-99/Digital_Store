@@ -12,7 +12,7 @@ import { Subscription } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
 
-  products: Product[] = []
+  products: Array<Product> | undefined
   
   productsSubscription: Subscription | undefined;
   category: string | undefined;
@@ -25,14 +25,19 @@ export class HomeComponent implements OnInit {
     private userService: UserService
     ) {}
 
+    ngOnInit(): void {
+      this.getProducts()
+    }
+
   onShowCategory(newCategory: string): void {
       this.category = newCategory;
       this.getProducts();
     }
   
   getProducts() {
-    this.productsService.getAllProducts().subscribe(products => {
-      this.products = products
+    this.productsSubscription = this.productsService
+    .getAllProducts().subscribe(_products => {
+      this.products = _products
        
     })
   }
@@ -54,9 +59,7 @@ export class HomeComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {
-    this.getProducts()
-  }
+ 
  
 
 

@@ -18,10 +18,8 @@
     <h5 id="offcanvasRightLabel" style="font-weight: bolder;">My cart</h5>
     <button type="button" class="btn-close text-reset" style="color:black; font-weight: bolder;" data-bs-dismiss="offcanvas" aria-label="Close">X</button>
   </div>
-  <div class="offcanvas-body">
-     <app-cart *ngFor="let product of cartService.cart.value.items">
-        [product]="product"
-      </app-cart>
+  <div class="offcanvas-body" >
+     <app-cart></app-cart>
     
   </div>
 </div>

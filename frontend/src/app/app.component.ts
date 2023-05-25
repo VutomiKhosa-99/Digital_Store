@@ -17,7 +17,6 @@ export class AppComponent {
   showAdminBoard = false;
   showModeratorBoard = false;
   username?: string;
-  // @Input() cart: Cart = { items: []}
 
   eventBusSub?: Subscription;
 
