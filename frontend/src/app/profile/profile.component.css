@@ -2,7 +2,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 96vh;
+    min-height: 100vh;
     background-image: url('../../assets/pexels-evg-kowalievska-1148960.jpg');
     background-size: cover;
     background-position: center;
@@ -27,6 +27,9 @@ body {
   
   h3 {
     font-size: 24px;
+    display: flex;
+    align-items: center;
+
   }
   
   strong {

@@ -13,6 +13,7 @@ export class ProductsService {
   getProductById(productId: string) {
     throw new Error('Method not implemented.');
   }
+  private apiUrl = 'https://localhost:4200/products';
 
   
   constructor(private httpClient: HttpClient) { }

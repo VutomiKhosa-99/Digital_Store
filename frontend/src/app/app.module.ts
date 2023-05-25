@@ -21,6 +21,7 @@ import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SizeGuideComponent } from './size-guide/size-guide.component';
+import { ProductsService } from './services/products.service';
 
 
 @NgModule({
@@ -47,7 +48,11 @@ import { SizeGuideComponent } from './size-guide/size-guide.component';
     RouterModule
 
   ],
-  providers: [httpInterceptorProviders],
+  providers: [
+    httpInterceptorProviders, 
+    ProductsService,
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
