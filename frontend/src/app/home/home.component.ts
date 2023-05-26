@@ -3,6 +3,7 @@ import { ProductsService } from '../services/products.service';
 import { Product } from '../models/Product';
 import { CartService } from '../services/cart.service';
 import { UserService } from '../services/user.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -11,9 +12,11 @@ import { UserService } from '../services/user.service';
 })
 export class HomeComponent implements OnInit {
 
-  products: Product[] = []
+  products: Array<Product> | undefined
   
-  @Input() product?: Product;
+  productsSubscription: Subscription | undefined;
+  category: string | undefined;
+  
 
   
   constructor(
@@ -22,25 +25,42 @@ export class HomeComponent implements OnInit {
     private userService: UserService
     ) {}
 
-  
+    ngOnInit(): void {
+      this.getProducts()
+    }
+
+  onShowCategory(newCategory: string): void {
+      this.category = newCategory;
+      this.getProducts();
+    }
   
   getProducts() {
-    this.productsService.getAllProducts().subscribe(products => {
-      this.products = products
+    this.productsSubscription = this.productsService
+    .getAllProducts().subscribe(_products => {
+      this.products = _products
        
     })
+  }
 
+  onAddToCart(product: Product): void {
+    this.cartService.addToCart({
+      image: product.image,
+      title: product.title,
+      price: product.price,
+      quantity: 1,
+      id: product._id,
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.productsSubscription) {
+      this.productsSubscription.unsubscribe();
+    }
   }
 
 
-  ngOnInit(): void {
-    this.getProducts()
-  }
  
-
-  addToCart() {
-    this.cartService.addToCart(this.product)
-  }
+ 
 
 
 }

@@ -1,15 +1,35 @@
 
 
-<div class="row row-cols-1 row-cols-md-4 g-4 " style="padding: 2%;">
+<!-- <div class="row row-cols-1 row-cols-md-4 g-4 " style="padding: 2%;">
   <div class="col" *ngFor="let product of products">
-    
-    <app-product-card [product]="product">
+    <div
+          (addToCart)="onAddToCart($event)"
+          app-product-card
+          [product]="product"  
+        ></div>
+     -->
+    <!-- <app-product-card [product]="product">
 
-    </app-product-card>
+    </app-product-card> -->
       
-    </div>
+    <!-- </div>
   
   
 
-    </div>
+    </div> -->
+
+    
   
+
+    <div class="row row-cols-1 row-cols-md-4 g-4 " style="padding: 2%;" *ngIf="products && products.length">
+      <div
+        *ngFor="let product of products"
+  
+      >
+        <app-product-card [product]="product" (addToCart)="onAddToCart($event)" >
+          
+        </app-product-card>
+
+  
+      </div>
+    </div>
