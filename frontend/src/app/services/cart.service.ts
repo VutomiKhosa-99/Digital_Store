@@ -19,10 +19,6 @@ export class CartService {
     this.createCartSession();
 
 
-
-
-
-
     // const items = [...this.cartProducts];
 
     // const itemInCart = items.find((_item) => _item === product);
