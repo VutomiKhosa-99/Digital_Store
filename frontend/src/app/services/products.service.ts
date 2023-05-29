@@ -17,7 +17,7 @@ export class ProductsService {
 
   getAllProducts() : Observable<Array<Product>> {
     return this.httpClient.get<Array<Product>>(
-      `${URL}/products`
+      URL + 'products'
     )
 
   }
