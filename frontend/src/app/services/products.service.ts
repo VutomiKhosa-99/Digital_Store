@@ -5,13 +5,13 @@ import { Product } from '../models/Product';
 import { map } from 'rxjs';
 
 
-const URL = 'http://localhost:2000'
+const URL = 'https://digital-store-api.onrender.com/'
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
 
-  private baseURL = 'http://localhost:2000'
+  private baseURL = 'https://digital-store-api.onrender.com/'
 
   constructor(private httpClient: HttpClient) { }
 
