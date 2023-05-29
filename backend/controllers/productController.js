@@ -69,7 +69,30 @@ const deleteOneProduct = async (req,res)=>{
     })
 }
 
+//Update a Product by the id in the request
+const updateProd = async (req, res) => {
+    if (!req.body) {
+      return res.status(400).send({
+        message: "Data to update can not be empty!"
+      });
+    }
 
+    const _id = req.params.id;
+
+    Product.findByIdAndUpdate(_id, req.body, { useFindAndModify: false })
+      .then(data => {
+        if (!data) {
+          res.status(404).send({
+            message: `Cannot update Survey with id=${_id}. Maybe Survey was not found!`
+          });
+        } else res.send({ message: "Survey was updated successfully." });
+      })
+      .catch(err => {
+        res.status(500).send({
+          message: "Error updating Survey with id=" + _id
+        });
+      });
+  };
 
 // @desc Get PRODUCT BY id
 // @route GET /productId
@@ -89,6 +112,10 @@ const getProductById = (req, res) => {
 
     }
 }
+
+
+
+
 
 
 // @desc Create new product
@@ -120,5 +147,6 @@ module.exports = {
     createNewProduct,
     getProductById,
     DeleteProduct,
-    deleteOneProduct
+    deleteOneProduct,
+    updateProd
 }

@@ -45,4 +45,28 @@ export class ViewProductsComponent  implements OnInit{
     this.productsService.delProduct(_id).subscribe({})
     window.location.reload()
  }
+
+ updateProducts(data:any , _id: string) {
+
+
+  let body = {
+
+
+     title: data.name,
+      description: data.description,
+      size:data.size,
+      brand: data.brand,
+      color: data.color,
+      price: data.price,
+      category: data.category,
+      image: data.image,
+      availableStock: data.availableStock
+      }
+
+  this.productsService.updateData(body,_id).subscribe(data=>{
+    this.product=data
+      window.location.reload()
+
+  })
+}
 }

@@ -11,7 +11,8 @@ const URL = 'http://localhost:2000'
 })
 export class ProductsService {
 
-  
+  private baseURL = 'http://localhost:2000'
+
   constructor(private httpClient: HttpClient) { }
 
   getAllProducts() : Observable<Array<Product>> {
@@ -38,4 +39,10 @@ export class ProductsService {
 //         map((products: Product[]) => products.find(p => p._id === id))
 //       );
 //   }
+
+
+updateData(data: any, _id: string): Observable<any> {
+  return this.httpClient.put(`${URL}/products/${_id}`, data)
 }
+}
+

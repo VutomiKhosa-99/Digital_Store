@@ -15,6 +15,9 @@ router.route('/:id')
 
     .delete(productController.deleteOneProduct)
 
+    router.route('/:id')
+    .put(productController.updateProd)
+
     
 
 module.exports = router
