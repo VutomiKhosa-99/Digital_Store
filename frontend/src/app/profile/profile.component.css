@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../../assets/pexels-evg-kowalievska-1148960.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+
+  }
+  
+  .jumbotron {
+    background-color: #222223;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+
+  }
+  
+  strong {
+    font-weight: bold;
+  }
+  
+  p {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .roles {
+    margin-top: 10px;
+  }
+  
+  .logged-out {
+    font-size: 18px;
+    color: #999;
+    margin-top: 20px;
+  }
+  

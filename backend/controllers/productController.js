@@ -47,7 +47,7 @@ res.json(this.productObj)
 }
 
 
-
+//delete single product
 const deleteOneProduct = async (req,res)=>{
     const _id = req.params.id;
     Product.findByIdAndRemove(_id)

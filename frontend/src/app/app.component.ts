@@ -4,6 +4,7 @@ import { StorageService } from './services/storage.service';
 import { AuthService } from './services/auth.service';
 import { EventBusService } from './_shared/event-bus.service';
 import { CartService } from './services/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -26,7 +27,8 @@ export class AppComponent {
     private storageService: StorageService,
     private authService: AuthService,
     private eventBusService: EventBusService,
-    public cartService: CartService
+    public cartService: CartService,
+    public router: Router
   ) {}
 
   ngOnInit(): void {
@@ -38,7 +40,6 @@ export class AppComponent {
 
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
       this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
-      console.log(this.showAdminBoard,"this admin board");
       
 
       this.username = user.username;
@@ -50,9 +51,7 @@ export class AppComponent {
 
     this.numCartItems = this.cartService.cartProducts.length
 
-    if(this.cartService.cartProducts.length>0){
-
-    }
+  
 
 
 
@@ -61,10 +60,11 @@ export class AppComponent {
   logout(): void {
     this.authService.logout().subscribe({
       next: res => {
-        console.log(res);
         this.storageService.clean();
 
-        // window.location.reload();
+        window.location.reload();
+        // this.router.navigate(['/login'])
+
       },
       error: err => {
         console.log(err);

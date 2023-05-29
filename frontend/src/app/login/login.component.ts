@@ -30,9 +30,13 @@ export class LoginComponent implements OnInit {
     if (this.storageService.isLoggedIn()) {
       this.isLoggedIn = true;
       this.user = this.storageService.getUser().username
-      setTimeout(() => {
-        this.router.navigate(['/profile'])
-      }, 2000)
+      this.router.navigate(['/home'])
+
+      // setTimeout(() => {
+      //   this.router.navigate(['/home'])
+      // }, 700)
+
+
 
     }
   }
@@ -46,7 +50,10 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.user = this.storageService.getUser().username;
-        // this.reloadPage();
+    
+      this.router.navigate(['/home'])
+      
+        this.reloadPage();
       },
       error: err => {
         this.errorMessage = err.error.message;
