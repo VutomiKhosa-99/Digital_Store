@@ -1,0 +1,81 @@
+<ol class="breadcrumb breadcrumbMargin">
+    <li class="breadcrumb-item"><a href="#" routerLink="/home"> Home</a></li>
+    <li class="breadcrumb-item active"  aria-current="page">View Products</li>
+  </ol>
+
+  <div class="col m-5">
+
+<table class="table">
+    <thead>
+      <tr>
+   
+        <th scope="col">Name</th>
+        <!-- <th scope="col">Size</th> -->
+        <th scope="col">Color</th>
+        <th scope="col">Price</th>
+        <th scope="col">Category</th>
+        <th scope="col">No of Stock</th>
+     
+        <!-- <th scope="col">Description</th> -->
+       
+       
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+        
+      </tr>
+    </thead>
+    <tbody  *ngFor="let product of products">
+     
+        <tr>
+           
+            <td>
+              <div>
+               <input id="name" [(ngModel)]="product.title" placeholder="name">
+            </div>
+          </td>
+            <!-- <td>
+              <div>
+                <input id="name" [(ngModel)]="product.size" placeholder="size">
+             </div>
+            </td> -->
+            <td>
+              <div>
+                <input id="name" [(ngModel)]="product.color" placeholder="color">
+             </div>
+            </td>
+            <td>
+              <div>
+                <input id="name" [(ngModel)]="product.price" placeholder="price">
+             </div>
+            </td>
+            <td>  <div>
+              <input id="name" [(ngModel)]="product.category" placeholder="category">
+           </div>
+          </td>
+          <td>
+            <div>
+              <input id="name" [(ngModel)]="product.availableStock" placeholder="no of stock">
+           </div>
+          </td>
+          <!-- <td>
+            <div>
+              <input id="name" [(ngModel)]="product.brand" placeholder="brand">
+           </div>
+          </td> -->
+            <!-- <td>
+              <div>
+                <input id="name" [(ngModel)]="product.description" placeholder="description">
+             </div>
+            </td> -->
+            
+            
+            
+            <td><button type="button" class="btn btn-info">Update</button></td>
+           
+            <td><button type="button" class="btn btn-warning" >Delete</button></td>
+      <!-- (click)="deleteProducts(product._id)" -->
+          </tr>
+      
+    </tbody>
+  </table>
+  </div>

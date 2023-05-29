@@ -24,6 +24,7 @@ import { SizeGuideComponent } from './size-guide/size-guide.component';
 import { CartTableComponent } from './cart-table/cart-table.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { AddProductsComponent } from './add-products/add-products.component';
+import { ViewProductsComponent } from './view-products/view-products.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { AddProductsComponent } from './add-products/add-products.component';
     CartTableComponent,
     InvoiceComponent,
     AddProductsComponent,
+    ViewProductsComponent,
    ],
   imports: [
     BrowserModule,
