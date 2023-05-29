@@ -25,7 +25,7 @@ const DeleteProduct = async (req, res) => {
   
   // Get all users from MongoDB
   try {
-    const{id}  = req.body
+    const{id}  = req.params.id
     const productObj = await Product.deleteOne(id).exec
     console.log(productObj)
     if (productObj.deletedCount === 1) {
@@ -45,6 +45,30 @@ const DeleteProduct = async (req, res) => {
 res.json(this.productObj)
 
 }
+
+
+
+const deleteOneProduct = async (req,res)=>{
+    const _id = req.params.id;
+    Product.findByIdAndRemove(_id)
+    .then(data =>{
+        if(!data){
+            res.status(404).send({
+                message: `Cannot delete product with id ${_id}`
+            })
+        }else{
+            res.send({
+                message: `Product Deleted`
+            })
+        }
+        
+    }).catch(err=>{
+        res.status(500).send({
+            message: `Cannot find product with id ${_id}`
+        })
+    })
+}
+
 
 
 // @desc Get PRODUCT BY id
@@ -95,5 +119,6 @@ module.exports = {
     getAllProducts,
     createNewProduct,
     getProductById,
-    DeleteProduct
+    DeleteProduct,
+    deleteOneProduct
 }

@@ -27,6 +27,11 @@ export class ProductsService {
     return this.httpClient.get(`${URL}/products/${id}`);
   }
 
+  //delete product
+  delProduct(_id:string): Observable<any>{
+    return this.httpClient.delete(`${URL}/products/${_id}`,{responseType: 'json'})
+  }
+
 //   getProduct(id: string): Observable<Product | undefined> {
 //     return this.getAllProducts()
 //       .pipe(

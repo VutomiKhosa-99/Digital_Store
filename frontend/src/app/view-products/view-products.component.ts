@@ -41,8 +41,8 @@ export class ViewProductsComponent  implements OnInit{
     this.getProducts()
    }
   
-  //  deleteProducts(_id: string) {
-  //   this.productsService.del(_id).subscribe({})
-  //   window.location.reload()
- // }
+   deleteProducts(_id: string) {
+    this.productsService.delProduct(_id).subscribe({})
+    window.location.reload()
+ }
 }
