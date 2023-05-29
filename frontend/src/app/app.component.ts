@@ -38,6 +38,8 @@ export class AppComponent {
 
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
       this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+      console.log(this.showAdminBoard,"this admin board");
+      
 
       this.username = user.username;
     }
@@ -62,7 +64,7 @@ export class AppComponent {
         console.log(res);
         this.storageService.clean();
 
-        window.location.reload();
+        // window.location.reload();
       },
       error: err => {
         console.log(err);
