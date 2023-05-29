@@ -1,0 +1,271 @@
+<ol class="breadcrumb breadcrumbMargin">
+    <li class="breadcrumb-item"><a href="#" routerLink="/home"> Home</a></li>
+    <li class="breadcrumb-item active"  aria-current="page">Add Products</li>
+  </ol>
+
+
+  
+  <div class="col-md-12" >
+    <div class="card card-container">
+
+  <form
+  *ngIf="!isSuccessful"
+  name="form"
+  (ngSubmit)="f.form.valid && onSubmit()"
+  #f="ngForm"
+  novalidate
+    >
+
+    <div class="form-group">
+       
+          <label for="title" class="form-label">Product Name</label>
+          <input
+          type="text"
+          class="form-control"
+          name="title"
+          [(ngModel)]="form.title"
+          required
+          minlength="3"
+          maxlength="20"
+          #title="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && title.errors }"
+        />
+        <div class="invalid-feedback" *ngIf="title.errors && f.submitted">
+            <div *ngIf="title.errors['required']">Username is required</div>
+            <div *ngIf="title.errors['minlength']">
+              Username must be at least 3 characters
+            </div>
+            <div *ngIf="title.errors['maxlength']">
+              Username must be at most 20 characters
+            </div>
+          </div>
+        </div>
+
+
+        
+        <div class="form-group">
+          <label for="size" class="form-label">Size</label>
+          <input
+          type="number"
+          class="form-control"
+          name="size"
+          [(ngModel)]="form.size"
+          required
+          
+          #size="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && size.errors }"
+        />
+        <div class="invalid-feedback" *ngIf="size.errors && f.submitted">
+            <div *ngIf="size.errors['required']">Size is required</div>
+            <div *ngIf="size.errors['minlength']">
+              Size must be at least 1 number
+            </div>
+            <div *ngIf="size.errors['maxlength']">
+              Size must be at most 20 number
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="form-group">
+          <label for="color" class="form-label">color</label>
+          <input
+          type="text"
+          class="form-control"
+          name="color"
+          [(ngModel)]="form.color"
+          required
+          minlength="3"
+          maxlength="20"
+          #color="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && color.errors }"
+        />
+        <div class="invalid-feedback" *ngIf="color.errors && f.submitted">
+            <div *ngIf="color.errors['required']">Color is required</div>
+            <div *ngIf="color.errors['minlength']">
+              Color must be at least 3 characters
+            </div>
+            <div *ngIf="color.errors['maxlength']">
+              Color must be at most 20 characters
+            </div>
+          </div>
+        </div>
+        
+
+
+        <div class="form-group">
+          <label for="price" class="form-label">Price</label>
+          <input
+          type="number"
+          class="form-control"
+          name="price"
+          [(ngModel)]="form.price"
+          required
+          
+          #price="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && price.errors }"
+        />
+        
+        <div class="invalid-feedback" *ngIf="price.errors && f.submitted">
+            <div *ngIf="price.errors['required']">Price is required</div>
+            <div *ngIf="price.errors['minlength']">
+              Price must be at least 2 numbers
+            </div>
+            <div *ngIf="price.errors['maxlength']">
+              Price must be at most 1 number
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="form-group">
+          <label for="category" class="form-label">Category</label>
+          <input
+          type="text"
+          class="form-control"
+          name="category"
+          [(ngModel)]="form.category"
+          required
+          minlength="3"
+          maxlength="20"
+          #category="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && category.errors }"
+        />
+        <div class="invalid-feedback" *ngIf="category.errors && f.submitted">
+            <div *ngIf="category.errors['required']">Category is required</div>
+            <div *ngIf="category.errors['minlength']">
+              Category must be at least 3 characters
+            </div>
+            <div *ngIf="category.errors['maxlength']">
+              Category must be at most 20 characters
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="form-group">
+            <label for="brand" class="form-label">Brand</label>
+            <input
+            type="text"
+            class="form-control"
+            name="brand"
+            [(ngModel)]="form.brand"
+            required
+            minlength="3"
+            maxlength="20"
+            #brand="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && brand.errors }"
+          />
+          <div class="invalid-feedback" *ngIf="brand.errors && f.submitted">
+            <div *ngIf="brand.errors['required']">Brand is required</div>
+            <div *ngIf="brand.errors['minlength']">
+              Brand must be at least 3 characters
+            </div>
+            <div *ngIf="brand.errors['maxlength']">
+              Brand must be at most 20 characters
+            </div>
+          </div>
+        </div>
+          
+
+        <div class="form-group">
+            <label for="availableStock" class="form-label">Number of items</label>
+            <input
+          type="number"
+          class="form-control"
+          name="availableStock"
+          [(ngModel)]="form.availableStock"
+          required
+         
+          #availableStock="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && availableStock.errors }"
+        />
+        <div class="invalid-feedback" *ngIf="availableStock.errors && f.submitted">
+            <div *ngIf="availableStock.errors['required']">Number is required</div>
+            <div *ngIf="availableStock.errors['minlength']">
+              Number must be at least 3 characters
+            </div>
+            <div *ngIf="availableStock.errors['maxlength']">
+              Number must be at most 20 characters
+            </div>
+          </div>
+        </div>
+          
+    
+        <div class="form-group">
+            <label for="description" class="form-label">Description</label>
+            <input
+          type="text"
+          class="form-control"
+          name="description"
+          [(ngModel)]="form.description"
+          required
+          minlength="3"
+          maxlength="50000"
+          #description="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && description.errors }"
+        />
+        <div class="invalid-feedback" *ngIf="description.errors && f.submitted">
+            <div *ngIf="description.errors['required']">Description is required</div>
+            <div *ngIf="description.errors['minlength']">
+                Description must be at least 3 characters
+            </div>
+            <div *ngIf="description.errors['maxlength']">
+                Description must be at most 20 characters
+            </div>
+          </div>
+        </div>
+          
+
+        <div class="form-group">
+            <label for="image" class="form-label">Upload Product</label>
+            <input
+          type="text"
+          class="form-control"
+          name="image"
+          [(ngModel)]="form.image"
+          required
+         
+          #image="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && image.errors }"
+        />
+        <div class="invalid-feedback" *ngIf="image.errors && f.submitted">
+            <div *ngIf="image.errors['required']">Description is required</div>
+            <div *ngIf="image.errors['minlength']">
+                Description must be at least 3 characters
+            </div>
+            <div *ngIf="image.errors['maxlength']">
+                Description must be at most 20 characters
+            </div>
+          </div>
+        </div>
+           
+          
+       
+          <div class="form-group">
+            <button class="mt-4 px-4 py-3  leading-6 text-base rounded-md border border-transparent text-white focus:outline-none bg-blue-500 text-blue-100 hover:text-white focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer inline-flex items-center w-full justify-center items-center font-medium focus:outline-none" >Add Product</button>
+            
+          </div>
+          <div class="flex flex-col items-center mt-5">
+            <p class="mt-1 text-xs font-light text-gray-500">
+              View All Products<a routerLink="/viewproducts" class="ml-1 font-medium text-blue-400">View</a>
+              </p>
+          </div>
+
+          <div class="alert alert-warning" *ngIf="f.submitted && isAddProductFailed">
+            Add products failed!
+          </div>
+          
+        </form>
+    
+        <div class="alert alert-success" *ngIf="isSuccessful">
+         Products added succesfully!
+        </div>
+    </div>
+    </div>
+    
+        
+
+    
+    
+
