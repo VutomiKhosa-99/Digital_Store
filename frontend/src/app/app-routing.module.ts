@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CartTableComponent } from './cart-table/cart-table.component';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { AddProductsComponent } from './add-products/add-products.component';
 
 const routes: Routes = [
 
@@ -24,7 +25,8 @@ const routes: Routes = [
 {path: 'footer', component:FooterComponent},
 {path: 'profile', component: ProfileComponent},
 {path: 'checkout', component: CartTableComponent},
-{path: 'invoice', component: InvoiceComponent},
+  { path: 'invoice', component: InvoiceComponent },
+{path:'addProducts', component:AddProductsComponent},
 { path: '', redirectTo: 'home', pathMatch: 'full' }
 
 
