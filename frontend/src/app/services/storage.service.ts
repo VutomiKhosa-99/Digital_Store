@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 
 const USER_KEY = 'auth-user';
 const ACTIVE_CART = 'active-cart'
+const USER_TYPE = 'user-type'
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,10 @@ export class StorageService {
 
   public saveCartSession(cart: any): void {
     window.sessionStorage.setItem(ACTIVE_CART, JSON.stringify(cart));
+  }
+
+  public saveUserTypeSession(user: any): void {
+    window.sessionStorage.setItem(USER_TYPE, JSON.stringify(user));
   }
   
 

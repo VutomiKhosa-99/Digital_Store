@@ -18,6 +18,7 @@ export class AppComponent {
   showModeratorBoard = false;
   username?: string;
   numCartItems : number
+  isAdmin = false
 
   eventBusSub?: Subscription;
 
@@ -37,6 +38,12 @@ export class AppComponent {
     if (this.isLoggedIn) {
       const user = this.storageService.getUser();
       this.roles = user.roles;
+      if(user.email.indexOf('admin.dfs')> -1){
+        this.storageService.saveUserTypeSession(user)
+        this.isAdmin=true
+      }else{
+        this.isAdmin = false
+      }
 
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
       this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
