@@ -31,6 +31,17 @@ export class StorageService {
   }
   
 
+  public getLoggedUser(): any {
+    const logged = window.sessionStorage.getItem(USER_KEY);
+    
+    if (logged) {
+      return JSON.parse(logged);
+    }
+
+    return null;
+  }
+
+
   public getCart(): any {
     const cart = window.sessionStorage.getItem(ACTIVE_CART);
     

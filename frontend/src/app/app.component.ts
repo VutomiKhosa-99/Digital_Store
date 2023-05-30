@@ -58,11 +58,23 @@ export class AppComponent {
 
     this.numCartItems = this.cartService.cartProducts.length
 
-  
-
-
 
   }
+
+
+  checkIfLogged(){
+    const logged = this.storageService.isLoggedIn()
+    
+
+    if(logged){
+      
+       this.router.navigate(['/checkout'])
+    }else{
+
+        this.router.navigate(['/login'])
+    }
+  }
+
 
   logout(): void {
     this.authService.logout().subscribe({

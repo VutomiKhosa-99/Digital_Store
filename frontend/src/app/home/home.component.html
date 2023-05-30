@@ -1,6 +1,18 @@
 
 
+
+<section class="jumbotron text-center mt-11">
+  <div class="container">
+    <h1 class="jumbotron-heading font-extrabold" style="font-size: x-large;">All Products</h1>
+    <p class="lead text-muted">Dress good, because you deserve it.</p>
+  
+  </div>
+</section>
+
 <div class="row row-cols-1 row-cols-md-4 g-4 " style="padding: 2%;">
+
+
+  
   <div class="col" *ngFor="let product of products">
     
     <app-product-card [product]="product">
@@ -8,7 +20,6 @@
     </app-product-card>
       
     </div>
-  
   
 
     </div>

@@ -5,7 +5,7 @@
          <!-- begin invoice-company -->
          <div class="invoice-company text-inverse f-w-600">
             <span class="pull-right hidden-print">
-            <a href="javascript:;" onclick="window.print()" class="btn btn-sm btn-white m-b-10 p-l-5"><i class="fa fa-print t-plus-1 fa-fw fa-lg"></i> Print</a>
+            <a href="javascript:;" onclick="window.print()" class="btn btn-sm btn-white m-b-10 p-l-5"><i class="fa fa-download t-plus-1 fa-fw fa-lg"></i> Download</a>
             </span>
             Digital Fashion Store
          </div>
@@ -33,10 +33,10 @@
                </address>
             </div> -->
             <div class="invoice-date">
-               <small>Invoice / July period</small>
-               <div class="date text-inverse m-t-5">August 3,2023</div>
+               <small>Invoice </small>
+               <div class="date text-inverse m-t-5">{{finalDate}}</div>
                <div class="invoice-detail">
-                  #0000123DSS<br>
+                  #01230878<br>
                 
                </div>
             </div>
@@ -76,7 +76,7 @@
                   <div class="invoice-price-row">
                      <div class="sub-price">
                         <small>SUBTOTAL</small>
-                        <span class="text-inverse">{{cartService.getSubTotal() | currency : 'ZAR' : 'R'}}</span>
+                        <span class="text-inverse">{{cartService.getTotalPrice() | currency : 'ZAR' : 'R'}}</span>
                      </div>
                      <div class="sub-price">
                         <i class="fa fa-plus text-muted"></i>
@@ -88,7 +88,7 @@
                   </div>
                </div>
                <div class="invoice-price-right">
-                  <small>TOTAL</small> <span class="f-w-600">{{cartService.getTotalPrice() | currency : 'ZAR' : 'R'}}</span>
+                  <small>TOTAL</small> <span class="f-w-600">{{cartService.getSubTotal() | currency : 'ZAR' : 'R'}}</span>
                </div>
             </div>
             <!-- end invoice-price -->
