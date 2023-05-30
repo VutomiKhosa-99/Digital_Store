@@ -6,6 +6,7 @@ import { map } from 'rxjs';
 
 
 const URL = 'https://digital-store-api.onrender.com/'
+// const URL = 'http://localhost:2000/'
 @Injectable({
   providedIn: 'root'
 })
@@ -25,12 +26,12 @@ export class ProductsService {
   
   //getting product by id
   getProduct(id: any): Observable<any> {
-    return this.httpClient.get(`${URL}/products/${id}`);
+    return this.httpClient.get(URL + 'products' + '/' + id);
   }
 
   //delete product
   delProduct(_id:string): Observable<any>{
-    return this.httpClient.delete(`${URL}/products/${_id}`,{responseType: 'json'})
+    return this.httpClient.delete(URL + 'products'  + '/' + _id ,{responseType: 'json'})
   }
 
 //   getProduct(id: string): Observable<Product | undefined> {
@@ -42,7 +43,7 @@ export class ProductsService {
 
 
 updateData(data: any, _id: string): Observable<any> {
-  return this.httpClient.put(`${URL}/products/${_id}`, data)
+  return this.httpClient.put(URL + 'products' + '/' +_id, data)
 }
 }
 
