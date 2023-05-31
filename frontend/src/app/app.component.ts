@@ -57,7 +57,7 @@ export class AppComponent {
     });
 
     this.cartService.loadCart();
-    this.cartService.getItems();
+    this.cartService.cartProducts = this.cartService.getItems();
 
 
     this.numCartItems = this.cartService.cartProducts.length

@@ -14,18 +14,19 @@ export class CartComponent implements OnInit {
 
   constructor(public cartService: CartService, public storageService: StorageService) { }
   ngOnInit(): void {
-    this.cartService.loadCart();
-    this.cartService.getItems();
   }
   
   addToCart() {
          this.cartService.addToCart(this.product)
+         
   }
 
    removeFromCart() {
     if (this.product) {
       this.cartService.removeFromCart(this.product?._id);
+      this.cartService.cartProducts = this.cartService.getItems();
     }
+
   }
 }
 
