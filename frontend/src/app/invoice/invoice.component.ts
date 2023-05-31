@@ -19,6 +19,7 @@ export class InvoiceComponent implements OnInit{
     cartEmpty() {
       this.cartService.cartProducts
       this.cartService.clearCart(this.cartService.cartProducts)
+      localStorage.removeItem("cart_items")
     }
 
   ngOnInit(): void {
