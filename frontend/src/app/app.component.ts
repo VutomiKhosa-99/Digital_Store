@@ -20,6 +20,8 @@ export class AppComponent {
   numCartItems : number
   isAdmin = false
 
+  title = 'frontend'
+
   eventBusSub?: Subscription;
 
 
