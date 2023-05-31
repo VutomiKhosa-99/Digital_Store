@@ -2,11 +2,17 @@
 
 
 This is an ecommerce site built using the following technologies:
+
   *MongoDB with Mongoose.
+  
   *Angular
+  
   *Node.js
+  
   *Typescript/JavaScript
+  
   *Html + CSS
+  
 We hosted our application on Vercel https://dfs-six.vercel.app/
 
 # Problem Statement
