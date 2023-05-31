@@ -9,11 +9,17 @@ import { CartService } from '../services/cart.service';
 export class InvoiceComponent implements OnInit{
 
   finalDate: string
+  emptyCart : false
+  
 
 
   constructor(public cartService: CartService){
-
   }
+
+    cartEmpty() {
+      this.cartService.cartProducts
+      this.cartService.clearCart(this.cartService.cartProducts)
+    }
 
   ngOnInit(): void {
     var today = new Date();
@@ -23,6 +29,9 @@ export class InvoiceComponent implements OnInit{
     
     this.finalDate = dd + '/' + mm + '/' + yyyy;
     //document.write(this.finalDate);
+    
+
+
 
   }
 

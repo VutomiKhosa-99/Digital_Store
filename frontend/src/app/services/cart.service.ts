@@ -16,6 +16,20 @@ export class CartService {
 
   addToCart(product: Product) {
     this.cartProducts.push(product);
+    //-----check if there are items already added in cart
+    let existingItems = [];
+    if ( localStorage.getItem('cart_items')){//----- update by adding new items
+      existingItems = JSON.parse(localStorage.getItem('cart_items'));
+      existingItems = [product, ...existingItems];
+      console.log( 'Items exists');
+    }
+    //-----if no items, add new items
+     else{ 
+      console.log( 'NO items exists');
+      existingItems = [product]
+    } 
+
+    this.saveCart();
     this.createCartSession();
 
 
@@ -72,9 +86,37 @@ export class CartService {
 
  removeFromCart(productId: string) {
     this.cartProducts = this.cartProducts.filter(product => product._id !== productId)
+    const index = this.cartProducts.findIndex(o => o._id === productId);
+
+    if (index > -1) {
+      this.cartProducts.splice(index, 1);
+      this.saveCart();
+    }
   }
 
 
- 
+  getItems() {
+    return this.cartProducts;
+  } 
+
+  loadCart(): void {
+    this.cartProducts = JSON.parse(localStorage.getItem("cart_items")) ?? [];
+  }
+
+  saveCart(): void {
+    localStorage.setItem('cart_items', JSON.stringify(this.cartProducts)); 
+  }
+
+  clearCart(items) {
+    this.cartProducts = [];
+
+    localStorage.removeItem("cart_items")
+  }
+
+
+
+  itemInCart(item): boolean {
+    return this.cartProducts.findIndex(o => o._id === item.id) > -1;
+  }
 
 }

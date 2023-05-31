@@ -56,6 +56,10 @@ export class AppComponent {
       this.logout();
     });
 
+    this.cartService.loadCart();
+    this.cartService.getItems();
+
+
     this.numCartItems = this.cartService.cartProducts.length
 
 

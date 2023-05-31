@@ -17,6 +17,8 @@ export class CartTableComponent implements OnInit{
 
   ngOnInit(): void {
     this.products = this.cartService.cartProducts
+    this.cartService.loadCart();
+    this.cartService.getItems();
     
   }
 
