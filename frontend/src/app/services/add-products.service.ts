@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 
 
 
-const URL = 'https://digital-store-api.onrender.com/';
+const URL = 'https://digital-store-api.onrender.com';
 
 
 
