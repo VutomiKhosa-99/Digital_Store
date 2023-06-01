@@ -57,13 +57,18 @@ Replace mongodb://localhost:27017/quicksurveys with your MongoDB connection URI 
 
 ## Start the application:
 
-## In the frontend directory, run the following command:
+### In the frontend directory, run the following command:
+
+Make sure you have Angular CLI installed globally in your local machine, use command below:
 
 ```
-ng serve
-In the backend directory, run the following command:
+/* @latest is optional  */ 
+npm install -g @angular/cli@latest
 ```
-
+```
+ng serve --open
+```
+### In the backend directory, run the following command:
 ```
 npm run dev
 ```
